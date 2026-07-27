@@ -8,72 +8,156 @@
     <link rel="dns-prefetch" href="https://api.counterapi.dev">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0b0f">
-    <meta name="description" content="JimmyWithFiona — collection of free online tools, games, and fun tests. Countdown timer, word counter, 2048, brick breaker, BMI calculator, and more!">
-    <meta name="keywords" content="online tools, free tools, web games, personality tests, word counter, typing test, 2048, BMI calculator, countdown timer">
+    <meta name="description" content="JimmyWithFiona — 20+ free online tools, games, and daily content. Wordle, Minesweeper, Linux commands, image resizer, pixel art, horoscope, word counter, age calculator, and more. No signup, no download.">
+    <meta name="keywords" content="online tools, free tools, web games, wordle, minesweeper, linux commands, image resizer, pixel art, horoscope, word counter, typing test, age calculator, percentage calculator, BMI calculator, 2048">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jimmywithfiona.com/">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1840337371416691" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1840337371416691" crossorigin="anonymous"></script>
     <meta name="google-site-verification" content="ePxMXHXzaRnnqr_OmaA9sww5PXXnX85txqf-sPPfrJE" />
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="JimmyWithFiona">
-    <meta property="og:title" content="JimmyWithFiona — Free Online Tools, Games & Tests">
-    <meta property="og:description" content="Collection of free online tools, games, and fun tests. Countdown, word counter, 2048, brick breaker, BMI, and more!">
+    <meta property="og:title" content="JimmyWithFiona — 20+ Free Online Tools, Games & Daily Content">
+    <meta property="og:description" content="Wordle, Minesweeper, Linux commands, image resizer, pixel art, horoscope, calculators, and more. All free, no signup.">
     <meta property="og:url" content="https://jimmywithfiona.com/">
-    <meta property="og:image" content="https://jimmywithfiona.com/favicon.svg">
+    <meta property="og:image" content="https://jimmywithfiona.com/og.png">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JimmyWithFiona — Free Online Tools & Games">
-    <meta name="twitter:description" content="Collection of free online tools, games, and fun tests.">
-    <meta name="twitter:image" content="https://jimmywithfiona.com/favicon.svg">
-    <title>JimmyWithFiona — Free Online Tools, Games & Fun Tests</title>
+    <meta name="twitter:title" content="JimmyWithFiona — 20+ Free Online Tools & Games">
+    <meta name="twitter:description" content="Wordle, Minesweeper, Linux commands, image tools, horoscope, calculators, and more.">
+    <meta name="twitter:image" content="https://jimmywithfiona.com/og.png">
+    <title>JimmyWithFiona — 20+ Free Online Tools, Games & Daily Content</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #0a0b0f; --bg-2: #11131a; --card: #161922; --border: #232733;
+            --bg: #0a0b0f; --bg-2: #11131a; --card: #161922; --card-2: #1a1e28;
+            --border: #232733; --border-2: #2d3340;
             --text: #e8eaf0; --text-dim: #7a8190;
+            --accent: #4f8cff; --accent-hover: #6ba1ff;
+            --pink: #e84393; --gold: #fdcb6e; --green: #2ecc71; --red: #ff3b3b;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
             background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden;
         }
-        header {
-            text-align: center; padding: 3rem 1.5rem 2rem;
+
+        /* Hero */
+        .hero {
+            text-align: center; padding: 4rem 1.5rem 2.5rem; position: relative; overflow: hidden;
         }
-        header h1 {
-            font-size: 2.5rem; margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #e84393, #fdcb6e, #00b894, #4f8cff);
+        .hero::before {
+            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 600px; height: 600px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(79,140,255,.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: 3rem; margin-bottom: 0.6rem; position: relative;
+            background: linear-gradient(135deg, #4f8cff, #6ba1ff, #2ecc71, #fdcb6e, #e84393);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            letter-spacing: -1px;
         }
-        header p { color: var(--text-dim); font-size: 1rem; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 3rem; }
-        .category { margin-bottom: 2rem; }
-        .category-title {
-            font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem;
-            color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem;
+        .hero p { color: var(--text-dim); font-size: 1.1rem; position: relative; }
+        .hero-badges {
+            display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap;
+            margin-top: 1.25rem; position: relative;
         }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.85rem; }
+        .hero-badge {
+            background: var(--card); border: 1px solid var(--border-2); border-radius: 999px;
+            padding: .35rem .9rem; font-size: .78rem; color: var(--text-dim); display: inline-flex; align-items: center; gap: .35rem;
+        }
+        .hero-badge strong { color: var(--accent-hover); }
+
+        /* Search */
+        .search-wrap {
+            max-width: 500px; margin: 1.5rem auto 0; position: relative;
+        }
+        .search-input {
+            width: 100%; background: var(--card); border: 1px solid var(--border-2);
+            border-radius: 12px; padding: .85rem 1.2rem .85rem 2.8rem; color: var(--text);
+            font-size: 1rem; font-family: inherit; transition: border-color .15s, box-shadow .15s;
+        }
+        .search-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(79,140,255,.15); }
+        .search-input::placeholder { color: var(--text-dim); }
+        .search-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; opacity: .5; pointer-events: none; }
+
+        .container { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+
+        /* Section */
+        .section { margin-bottom: 2.5rem; }
+        .section-header {
+            display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem;
+        }
+        .section-icon { font-size: 1.3rem; }
+        .section-title {
+            font-size: 1.25rem; font-weight: 800; color: var(--text);
+        }
+        .section-count {
+            font-size: .75rem; color: var(--text-dim); background: var(--card);
+            border: 1px solid var(--border-2); border-radius: 999px; padding: .15rem .6rem;
+        }
+
+        /* Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: .85rem; }
         .card {
-            display: flex; flex-direction: column; align-items: center; text-align: center;
-            background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-            padding: 1.5rem 1rem; text-decoration: none; color: var(--text);
-            transition: transform .12s, border-color .12s; min-height: 44px;
+            display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+            background: linear-gradient(180deg, var(--card), var(--card-2));
+            border: 1px solid var(--border-2); border-radius: 14px;
+            padding: 1.25rem 1.25rem; text-decoration: none; color: var(--text);
+            transition: transform .15s, border-color .15s, box-shadow .15s;
+            min-height: 44px; position: relative; overflow: hidden;
         }
-        .card:hover { transform: translateY(-3px); border-color: var(--accent); }
-        .card-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .card-name { font-size: 0.95rem; font-weight: 600; }
-        .card-desc { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem; }
-        .stats { text-align: center; margin: 2rem 0; font-size: 0.78rem; color: var(--text-dim); }
-        .stats strong { color: #6ba1ff; font-variant-numeric: tabular-nums; }
-        .stat-divider { margin: 0 0.6rem; opacity: 0.4; }
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            opacity: 0; transition: opacity .15s;
+        }
+        .card:hover {
+            transform: translateY(-4px); border-color: var(--accent);
+            box-shadow: 0 8px 24px rgba(79,140,255,.12);
+        }
+        .card:hover::before { opacity: 1; }
+        .card-top { display: flex; align-items: center; gap: .6rem; margin-bottom: .5rem; }
+        .card-icon { font-size: 1.8rem; line-height: 1; }
+        .card-name { font-size: .95rem; font-weight: 700; }
+        .card-desc { font-size: .78rem; color: var(--text-dim); line-height: 1.4; }
+        .card-tag {
+            position: absolute; top: .6rem; right: .6rem; font-size: .6rem;
+            background: rgba(46,204,113,.15); color: var(--green); border-radius: 4px;
+            padding: .1rem .4rem; font-weight: 600; text-transform: uppercase; letter-spacing: .03em;
+        }
+        .card-tag.hot { background: rgba(232,67,147,.15); color: var(--pink); }
+        .card-tag.new { background: rgba(253,203,110,.15); color: var(--gold); }
+
+        /* Stats */
+        .stats {
+            text-align: center; margin: 2.5rem 0 1rem; font-size: .82rem; color: var(--text-dim);
+            display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+        }
+        .stats strong { color: var(--accent-hover); font-variant-numeric: tabular-nums; font-size: 1rem; }
+        .stat-divider { opacity: .3; }
+
+        /* SEO section */
+        .seo-section { color: var(--text-dim); font-size: .88rem; line-height: 1.8; margin-top: 2rem; }
+        .seo-section h2 { color: var(--text); font-size: 1.1rem; margin: 1.5rem 0 .5rem; }
+        .seo-section a { color: var(--accent-hover); }
+
         footer {
-            text-align: center; padding: 1.5rem; color: var(--text-dim);
-            font-size: 0.75rem; border-top: 1px solid var(--border);
+            text-align: center; padding: 2rem 1.5rem; color: var(--text-dim);
+            font-size: .78rem; border-top: 1px solid var(--border);
         }
-        footer a { color: #6ba1ff; text-decoration: none; }
+        footer a { color: var(--accent-hover); text-decoration: none; }
+        footer .footer-links { margin-bottom: .5rem; }
+        footer .cross-links { margin-top: .6rem; font-size: .72rem; opacity: .6; }
+
         @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
-            .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+            .hero { padding: 2.5rem 1rem 1.5rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: .95rem; }
+            .grid { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: .6rem; }
+            .card { padding: 1rem; }
+            .card-icon { font-size: 1.5rem; }
         }
     </style>
     <link rel="prefetch" href="/web-tools/">
@@ -95,173 +179,253 @@
     <link rel="prefetch" href="/daily-horoscope/">
     <link rel="prefetch" href="/image-resizer/">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebSite","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/","description":"Collection of free online tools, games, and fun tests","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://jimmywithfiona.com/?q={search_term_string}"},"query-input":"required name=search_term_string"},"publisher":{"@type":"Organization","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/"}}
+    {"@context":"https://schema.org","@type":"WebSite","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/","description":"Collection of 20+ free online tools, games, and daily content","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://jimmywithfiona.com/?q={search_term_string}"},"query-input":"required name=search_term_string"},"publisher":{"@type":"Organization","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/"}}
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Organization","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/","description":"Free online tools, games, and fun tests"}
+    {"@context":"https://schema.org","@type":"Organization","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/","description":"Free online tools, games, and daily content"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is JimmyWithFiona?","acceptedAnswer":{"@type":"Answer","text":"JimmyWithFiona is a collection of 20+ free online tools, games, and daily content. Everything runs in your browser — no downloads, no signups, no data collection."}},{"@type":"Question","name":"Are all tools free?","acceptedAnswer":{"@type":"Answer","text":"Yes, every tool, game, and test is 100% free with no hidden costs, no signup, and no download required."}},{"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes, all tools are fully responsive and optimized for touch screens on phones and tablets."}},{"@type":"Question","name":"Is my data safe?","acceptedAnswer":{"@type":"Answer","text":"Yes. All processing happens locally in your browser. We don't collect, store, or transmit your data."}}]}
     </script>
 </head>
 <body>
-<header>
+<header class="hero">
     <h1>JimmyWithFiona</h1>
-    <p>Free online tools, games, and fun tests — all in one place.</p>
+    <p>20+ free online tools, games &amp; daily content — all in one place.</p>
+    <div class="hero-badges">
+        <span class="hero-badge">⚡ <strong>Instant</strong> — no signup</span>
+        <span class="hero-badge">🔒 <strong>Private</strong> — runs in browser</span>
+        <span class="hero-badge">📱 <strong>Mobile</strong> — works everywhere</span>
+        <span class="hero-badge">💸 <strong>100% Free</strong></span>
+    </div>
+    <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search 20+ tools and games..." autocomplete="off">
+    </div>
 </header>
 <main class="container">
 
-    <!-- Tools -->
-    <div class="category">
-        <div class="category-title">🛠️ Tools</div>
-        <div class="grid">
-            <a class="card" href="/linux-commands/">
-                <div class="card-icon">🐧</div>
-                <div class="card-name">Linux Commands</div>
-                <div class="card-desc">200+ commands cheat sheet with examples</div>
+    <!-- 🔥 Popular -->
+    <div class="section" id="sec-popular">
+        <div class="section-header">
+            <span class="section-icon">🔥</span>
+            <span class="section-title">Popular</span>
+            <span class="section-count" id="count-popular">5</span>
+        </div>
+        <div class="grid" id="grid-popular">
+            <a class="card" href="/wordle/" data-search="wordle word game puzzle guess">
+                <span class="card-tag hot">Daily</span>
+                <div class="card-top"><span class="card-icon">🟩</span><span class="card-name">Wordle</span></div>
+                <div class="card-desc">Guess the 5-letter word in 6 tries. Daily puzzle + free practice.</div>
             </a>
-            <a class="card" href="/web-tools/">
-                <div class="card-icon">🛠️</div>
-                <div class="card-name">WebTools</div>
-                <div class="card-desc">Mortgage, converter, QR, password, color</div>
+            <a class="card" href="/daily-horoscope/" data-search="horoscope zodiac astrology daily forecast">
+                <span class="card-tag hot">Daily</span>
+                <div class="card-top"><span class="card-icon">♈</span><span class="card-name">Daily Horoscope</span></div>
+                <div class="card-desc">Today's zodiac forecast for all 12 signs. Love, career, lucky numbers.</div>
             </a>
-            <a class="card" href="/quick-tools/">
-                <div class="card-icon">⏱️</div>
-                <div class="card-name">QuickTools</div>
-                <div class="card-desc">Countdown, random number, stopwatch</div>
+            <a class="card" href="/linux-commands/" data-search="linux commands cheat sheet terminal bash">
+                <span class="card-tag hot">Trending</span>
+                <div class="card-top"><span class="card-icon">🐧</span><span class="card-name">Linux Commands</span></div>
+                <div class="card-desc">200+ commands cheat sheet with examples and explanations.</div>
             </a>
-            <a class="card" href="/word-counter/">
-                <div class="card-icon">📝</div>
-                <div class="card-name">Word Counter</div>
-                <div class="card-desc">Count words, characters, reading time</div>
+            <a class="card" href="/minesweeper/" data-search="minesweeper mine game puzzle classic">
+                <div class="card-top"><span class="card-icon">💣</span><span class="card-name">Minesweeper</span></div>
+                <div class="card-desc">Classic mine-finding puzzle. 3 difficulty levels, timer, best times.</div>
             </a>
-            <a class="card" href="/age-calculator/">
-                <div class="card-icon">🎂</div>
-                <div class="card-name">Age Calculator</div>
-                <div class="card-desc">Find your exact age in years, days, seconds</div>
-            </a>
-            <a class="card" href="/percentage-calculator/">
-                <div class="card-icon">%</div>
-                <div class="card-name">Percentage Calculator</div>
-                <div class="card-desc">Percent of, change, increase, decrease</div>
-            </a>
-            <a class="card" href="/bmi-calculator/">
-                <div class="card-icon">📊</div>
-                <div class="card-name">BMI Calculator</div>
-                <div class="card-desc">Check your healthy weight range</div>
-            </a>
-            <a class="card" href="/pixel-art/">
-                <div class="card-icon">🎨</div>
-                <div class="card-name">Pixel Art</div>
-                <div class="card-desc">Convert photos to 8-bit pixel art</div>
-            </a>
-            <a class="card" href="/daily-horoscope/">
-                <div class="card-icon">♈</div>
-                <div class="card-name">Daily Horoscope</div>
-                <div class="card-desc">Today's zodiac forecast for all 12 signs</div>
-            </a>
-            <a class="card" href="/image-resizer/">
-                <div class="card-icon">📐</div>
-                <div class="card-name">Image Resizer</div>
-                <div class="card-desc">Resize images, compress, convert formats</div>
+            <a class="card" href="/pixel-art/" data-search="pixel art image converter 8-bit retro photo">
+                <span class="card-tag new">New</span>
+                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name">Pixel Art</span></div>
+                <div class="card-desc">Convert photos to retro 8-bit pixel art. 6 palettes, live preview.</div>
             </a>
         </div>
     </div>
 
-    <!-- Games -->
-    <div class="category">
-        <div class="category-title">🎮 Games</div>
-        <div class="grid">
-            <a class="card" href="/wordle/">
-                <div class="card-icon">🟩</div>
-                <div class="card-name">Wordle</div>
-                <div class="card-desc">Guess the 5-letter word in 6 tries</div>
+    <!-- 🛠️ Calculators & Tools -->
+    <div class="section" id="sec-tools">
+        <div class="section-header">
+            <span class="section-icon">🛠️</span>
+            <span class="section-title">Calculators &amp; Tools</span>
+            <span class="section-count" id="count-tools">9</span>
+        </div>
+        <div class="grid" id="grid-tools">
+            <a class="card" href="/age-calculator/" data-search="age calculator birthday years days">
+                <div class="card-top"><span class="card-icon">🎂</span><span class="card-name">Age Calculator</span></div>
+                <div class="card-desc">Find your exact age in years, months, days, hours, minutes, seconds.</div>
             </a>
-            <a class="card" href="/game-2048/">
-                <div class="card-icon">🎮</div>
-                <div class="card-name">2048</div>
-                <div class="card-desc">Merge tiles puzzle game</div>
+            <a class="card" href="/percentage-calculator/" data-search="percentage calculator percent change increase">
+                <div class="card-top"><span class="card-icon">%</span><span class="card-name">Percentage Calculator</span></div>
+                <div class="card-desc">Percent of, change, increase, decrease with step-by-step solutions.</div>
             </a>
-            <a class="card" href="/brick-breaker/">
-                <div class="card-icon">🧱</div>
-                <div class="card-name">Brick Breaker</div>
-                <div class="card-desc">Classic arcade game with power-ups</div>
+            <a class="card" href="/word-counter/" data-search="word counter character count text">
+                <div class="card-top"><span class="card-icon">📝</span><span class="card-name">Word Counter</span></div>
+                <div class="card-desc">Count words, characters, sentences, reading time, keyword density.</div>
             </a>
-            <a class="card" href="/win98-simulator/">
-                <div class="card-icon">🖥️</div>
-                <div class="card-name">Win98 Simulator</div>
-                <div class="card-desc">Relive Windows 98 in your browser</div>
+            <a class="card" href="/bmi-calculator/" data-search="bmi calculator body mass index weight">
+                <div class="card-top"><span class="card-icon">📊</span><span class="card-name">BMI Calculator</span></div>
+                <div class="card-desc">Check your healthy weight range. Metric and imperial support.</div>
             </a>
-            <a class="card" href="/minesweeper/">
-                <div class="card-icon">💣</div>
-                <div class="card-name">Minesweeper</div>
-                <div class="card-desc">Classic mine-finding puzzle game</div>
+            <a class="card" href="/image-resizer/" data-search="image resizer resize photo compress convert">
+                <span class="card-tag new">New</span>
+                <div class="card-top"><span class="card-icon">📐</span><span class="card-name">Image Resizer</span></div>
+                <div class="card-desc">Resize images, compress, convert to PNG/JPG/WebP. No upload.</div>
+            </a>
+            <a class="card" href="/web-tools/" data-search="web tools mortgage converter qr password color">
+                <div class="card-top"><span class="card-icon">🛠️</span><span class="card-name">WebTools</span></div>
+                <div class="card-desc">Mortgage, unit converter, QR code, password generator, color tool.</div>
+            </a>
+            <a class="card" href="/quick-tools/" data-search="quick tools countdown timer stopwatch random">
+                <div class="card-top"><span class="card-icon">⏱️</span><span class="card-name">QuickTools</span></div>
+                <div class="card-desc">Countdown timer, random number generator, stopwatch.</div>
+            </a>
+            <a class="card" href="/typing-test/" data-search="typing test wpm speed keyboard">
+                <div class="card-top"><span class="card-icon">⌨️</span><span class="card-name">Typing Test</span></div>
+                <div class="card-desc">Test your typing speed and accuracy. WPM, modes, quotes.</div>
+            </a>
+            <a class="card" href="/linux-commands/" data-search="linux commands cheat sheet terminal bash">
+                <div class="card-top"><span class="card-icon">🐧</span><span class="card-name">Linux Commands</span></div>
+                <div class="card-desc">200+ commands with examples. Search and filter by category.</div>
             </a>
         </div>
     </div>
 
-    <!-- Skill & Tests -->
-    <div class="category">
-        <div class="category-title">⌨️ Skill & Tests</div>
-        <div class="grid">
-            <a class="card" href="/typing-test/">
-                <div class="card-icon">⌨️</div>
-                <div class="card-name">Typing Test</div>
-                <div class="card-desc">Test your typing speed and WPM</div>
+    <!-- 🎮 Games -->
+    <div class="section" id="sec-games">
+        <div class="section-header">
+            <span class="section-icon">🎮</span>
+            <span class="section-title">Games</span>
+            <span class="section-count" id="count-games">5</span>
+        </div>
+        <div class="grid" id="grid-games">
+            <a class="card" href="/wordle/" data-search="wordle word game puzzle guess">
+                <span class="card-tag hot">Daily</span>
+                <div class="card-top"><span class="card-icon">🟩</span><span class="card-name">Wordle</span></div>
+                <div class="card-desc">Guess the 5-letter word in 6 tries. Emoji share, stats.</div>
             </a>
-            <a class="card" href="/fun-tests/">
-                <div class="card-icon">✨</div>
-                <div class="card-name">FunTests</div>
-                <div class="card-desc">Personality quizzes & love calculator</div>
+            <a class="card" href="/minesweeper/" data-search="minesweeper mine game puzzle classic">
+                <div class="card-top"><span class="card-icon">💣</span><span class="card-name">Minesweeper</span></div>
+                <div class="card-desc">Classic mine-finding puzzle. 3 levels, flag, flood-fill.</div>
             </a>
-            <a class="card" href="/wheel-spinner/">
-                <div class="card-icon">🎡</div>
-                <div class="card-name">Wheel Spinner</div>
-                <div class="card-desc">Random decision maker</div>
+            <a class="card" href="/game-2048/" data-search="2048 puzzle merge tiles game">
+                <div class="card-top"><span class="card-icon">🎮</span><span class="card-name">2048</span></div>
+                <div class="card-desc">Merge tiles to reach 2048. Addictive puzzle game.</div>
+            </a>
+            <a class="card" href="/brick-breaker/" data-search="brick breaker arcade game breakout">
+                <div class="card-top"><span class="card-icon">🧱</span><span class="card-name">Brick Breaker</span></div>
+                <div class="card-desc">Classic arcade game with power-ups and levels.</div>
+            </a>
+            <a class="card" href="/win98-simulator/" data-search="windows 98 simulator retro desktop">
+                <div class="card-top"><span class="card-icon">🖥️</span><span class="card-name">Win98 Simulator</span></div>
+                <div class="card-desc">Relive Windows 98 — Notepad, Paint, Minesweeper, more.</div>
             </a>
         </div>
     </div>
 
-    <!-- News -->
-    <div class="category">
-        <div class="category-title">📰 News</div>
-        <div class="grid">
-            <a class="card" href="/worldpulse/">
-                <div class="card-icon">🌍</div>
-                <div class="card-name">WorldPulse</div>
-                <div class="card-desc">Live international news dashboard</div>
+    <!-- ✨ Fun & Lifestyle -->
+    <div class="section" id="sec-fun">
+        <div class="section-header">
+            <span class="section-icon">✨</span>
+            <span class="section-title">Fun &amp; Lifestyle</span>
+            <span class="section-count" id="count-fun">4</span>
+        </div>
+        <div class="grid" id="grid-fun">
+            <a class="card" href="/daily-horoscope/" data-search="horoscope zodiac astrology daily forecast">
+                <span class="card-tag hot">Daily</span>
+                <div class="card-top"><span class="card-icon">♈</span><span class="card-name">Daily Horoscope</span></div>
+                <div class="card-desc">Today's zodiac forecast for all 12 signs. Updated daily.</div>
+            </a>
+            <a class="card" href="/pixel-art/" data-search="pixel art image converter 8-bit retro photo">
+                <span class="card-tag new">New</span>
+                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name">Pixel Art</span></div>
+                <div class="card-desc">Convert photos to 8-bit pixel art. 6 retro palettes.</div>
+            </a>
+            <a class="card" href="/fun-tests/" data-search="fun tests personality quiz love calculator">
+                <div class="card-top"><span class="card-icon">✨</span><span class="card-name">FunTests</span></div>
+                <div class="card-desc">Personality quizzes, love calculator, psychological age test.</div>
+            </a>
+            <a class="card" href="/wheel-spinner/" data-search="wheel spinner random decision maker spin">
+                <div class="card-top"><span class="card-icon">🎡</span><span class="card-name">Wheel Spinner</span></div>
+                <div class="card-desc">Random decision maker. Spin the wheel for choices.</div>
             </a>
         </div>
+    </div>
+
+    <!-- 📰 News -->
+    <div class="section" id="sec-news">
+        <div class="section-header">
+            <span class="section-icon">📰</span>
+            <span class="section-title">News</span>
+            <span class="section-count">1</span>
+        </div>
+        <div class="grid">
+            <a class="card" href="/worldpulse/" data-search="worldpulse news dashboard international headlines">
+                <div class="card-top"><span class="card-icon">🌍</span><span class="card-name">WorldPulse</span></div>
+                <div class="card-desc">Live international news dashboard with world clocks.</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="no-results" id="noResults" style="text-align:center;padding:2rem;color:var(--text-dim);display:none;">
+        <p style="font-size:1.5rem;margin-bottom:.5rem;">🔍</p>
+        <p>No results found. Try a different search.</p>
     </div>
 
     <div class="stats">
-        👁️ Views <strong id="pv">-</strong><span class="stat-divider">|</span>👤 Visitors <strong id="uv">-</strong>
+        <span>👁️ Views <strong id="pv">-</strong></span>
+        <span class="stat-divider">|</span>
+        <span>👤 Visitors <strong id="uv">-</strong></span>
+        <span class="stat-divider">|</span>
+        <span>🛠️ <strong>20+</strong> Tools</span>
+        <span class="stat-divider">|</span>
+        <span>🔒 <strong>100%</strong> Private</span>
     </div>
 
     <!-- SEO content -->
-    <div style="color: var(--text-dim); font-size: 0.85rem; line-height: 1.7; margin-top: 2rem;">
-        <h2 style="color: var(--text); font-size: 1.1rem; margin-bottom: 0.5rem;">About JimmyWithFiona</h2>
-        <p>JimmyWithFiona is a collection of free online tools, games, and fun personality tests. All apps run entirely in your browser — no downloads, no signups, no data collection. Whether you need to count words for an essay, play 2048 on your lunch break, test your love compatibility, or check your BMI, we've got you covered.</p>
-        <h2 style="color: var(--text); font-size: 1.1rem; margin: 1rem 0 0.5rem;">What's Inside?</h2>
-        <p><strong>Tools:</strong> Mortgage calculator, unit converter, QR code generator, password generator, color tool, countdown timer, random number generator, stopwatch, word counter, age calculator, percentage calculator, and BMI calculator. These tools cover everyday needs from financial planning to health monitoring to productivity. All calculations and conversions happen instantly in your browser.</p>
-        <p><strong>Games:</strong> Wordle daily word puzzle, 2048 puzzle game, brick breaker arcade, and a Windows 98 simulator with working Notepad, Calculator, Paint, and Minesweeper. Each game features smooth animations, touch controls, and local saving. The Windows 98 simulator lets you drag windows, use the Start menu, and relive the classic desktop experience.</p>
-        <p><strong>Skill & Tests:</strong> Typing speed test (WPM and accuracy), personality quizzes, love calculator, psychological age test, and a spinning wheel for random decisions. Each test generates shareable results — perfect for sharing with friends on social media.</p>
+    <div class="seo-section">
+        <h2>About JimmyWithFiona</h2>
+        <p>JimmyWithFiona is a collection of 20+ free online tools, games, and daily content. All apps run entirely in your browser — no downloads, no signups, no data collection. Whether you want to play Wordle, check your daily horoscope, resize an image, learn Linux commands, or calculate your age down to the second, we've got you covered.</p>
+        <h2>What's Inside?</h2>
+        <p><strong>Calculators &amp; Tools:</strong> Age calculator, percentage calculator, word counter, BMI calculator, image resizer, pixel art converter, typing test, Linux commands cheat sheet, plus WebTools (mortgage, unit converter, QR code, password generator, color picker) and QuickTools (countdown timer, random number generator, stopwatch). All calculations and conversions happen instantly in your browser.</p>
+        <p><strong>Games:</strong> Wordle daily word puzzle, Minesweeper, 2048, brick breaker arcade, and a fully interactive Windows 98 simulator. Each game features smooth animations, touch controls, and local saving.</p>
+        <p><strong>Fun &amp; Lifestyle:</strong> Daily horoscope for all 12 zodiac signs, pixel art converter, personality quizzes, love calculator, psychological age test, and a spinning wheel for random decisions. Each test generates shareable results.</p>
         <p><strong>News:</strong> WorldPulse live international news dashboard with real-time headlines from top global outlets and world clocks for major cities.</p>
-        <h2 style="color: var(--text); font-size: 1.1rem; margin: 1rem 0 0.5rem;">Why Use JimmyWithFiona?</h2>
-        <p>Everything is <strong>100% free</strong> with no limits. All tools work offline once loaded, respect your privacy by processing data locally, and are optimized for both desktop and mobile devices. Bookmark this page for quick access to all your everyday tools and games.</p>
-        <h2 style="color: var(--text); font-size: 1.1rem; margin: 1rem 0 0.5rem;">Privacy & Security</h2>
-        <p>Your privacy is our priority. All tools process data locally in your browser — your text, calculations, passwords, and drawings never leave your device. We don't require accounts, don't track your inputs, and don't store your data. Read our full <a href="privacy.html" style="color:#6ba1ff;">privacy policy</a> for details.</p>
-        <h2 style="color: var(--text); font-size: 1.1rem; margin: 1rem 0 0.5rem;">FAQ</h2>
+        <h2>Why Use JimmyWithFiona?</h2>
+        <p>Everything is <strong>100% free</strong> with no limits. All tools work offline once loaded, respect your privacy by processing data locally, and are optimized for both desktop and mobile devices. New tools and games are added regularly. Bookmark this page for quick access to all your everyday tools and entertainment.</p>
+        <h2>Privacy &amp; Security</h2>
+        <p>Your privacy is our priority. All tools process data locally in your browser — your text, calculations, passwords, images, and drawings never leave your device. We don't require accounts, don't track your inputs, and don't store your data. Read our full <a href="privacy.html">privacy policy</a> for details.</p>
+        <h2>FAQ</h2>
         <p><strong>Are all tools really free?</strong> — Yes, every tool, game, and test is completely free with no hidden costs.</p>
         <p><strong>Do I need to download anything?</strong> — No. Everything runs in your browser. Just open a page and start using it.</p>
         <p><strong>Does it work on mobile?</strong> — Yes, all tools are responsive and support touch controls.</p>
-        <p><strong>Is my data safe?</strong> — Yes. All processing is local. We don't collect, store, or transmit your data. See our <a href="privacy.html" style="color:#6ba1ff;">privacy policy</a>.</p>
-        <p><strong>Can I suggest a new tool?</strong> — Yes! Visit our <a href="contact.html" style="color:#6ba1ff;">contact page</a> to share your ideas.</p>
-        <p style="margin-top:1rem;">Learn more <a href="about.html" style="color:#6ba1ff;">about us</a> or <a href="contact.html" style="color:#6ba1ff;">get in touch</a>.</p>
+        <p><strong>Is my data safe?</strong> — Yes. All processing is local. We don't collect, store, or transmit your data. See our <a href="privacy.html">privacy policy</a>.</p>
+        <p><strong>Can I suggest a new tool?</strong> — Yes! Visit our <a href="contact.html">contact page</a> to share your ideas.</p>
+        <p style="margin-top:1rem;">Learn more <a href="about.html">about us</a> or <a href="contact.html">get in touch</a>.</p>
     </div>
 </main>
 <footer>
-    <p><a href="about.html" style="color:#6ba1ff;text-decoration:none;">About</a> · <a href="privacy.html" style="color:#6ba1ff;text-decoration:none;">Privacy</a> · <a href="contact.html" style="color:#6ba1ff;text-decoration:none;">Contact</a></p>
-    <p style="margin-top:0.4rem;">JimmyWithFiona © 2026 · Free online tools, games & tests</p>
+    <p class="footer-links"><a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a></p>
+    <p>JimmyWithFiona © 2026 · 20+ free online tools, games &amp; daily content</p>
+    <div class="cross-links">More: <a href="/wordle/">Wordle</a> · <a href="/minesweeper/">Minesweeper</a> · <a href="/daily-horoscope/">Horoscope</a> · <a href="/linux-commands/">Linux Commands</a> · <a href="/pixel-art/">Pixel Art</a> · <a href="/image-resizer/">Image Resizer</a></div>
 </footer>
 <script>
+// Search
+const searchInput = document.getElementById("searchInput");
+const noResults = document.getElementById("noResults");
+searchInput.addEventListener("input", function() {
+    const q = this.value.toLowerCase().trim();
+    let visible = 0;
+    document.querySelectorAll(".card").forEach(card => {
+        const text = (card.dataset.search || "").toLowerCase() + " " + card.textContent.toLowerCase();
+        const match = !q || text.includes(q);
+        card.style.display = match ? "" : "none";
+        if (match) visible++;
+    });
+    document.querySelectorAll(".section").forEach(sec => {
+        const cards = [...sec.querySelectorAll(".card")];
+        const anyVisible = cards.some(c => c.style.display !== "none");
+        sec.style.display = anyVisible ? "" : "none";
+    });
+    noResults.style.display = visible === 0 ? "block" : "none";
+});
 // View counter
 fetch("https://api.counterapi.dev/v1/jimmyllll-jwf/pv/up")
     .then(r => r.json())
