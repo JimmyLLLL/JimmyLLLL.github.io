@@ -206,7 +206,7 @@
     </div>
     <div class="search-wrap">
         <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" id="searchInput" placeholder="Search 25+ tools and games..." autocomplete="off">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search 30+ tools and games..." autocomplete="off">
     </div>
 </header>
 <main class="container">
@@ -223,53 +223,131 @@
 
 
 
-    <!-- 🛠️ Calculators & Tools -->
-    <div class="section" id="sec-tools">
+    <!-- 🤖 AI Tools -->
+    <div class="section" id="sec-ai">
         <div class="section-header">
-            <span class="section-icon">🛠️</span>
-            <span class="section-title">Calculators &amp; Tools</span>
-            <span class="section-count" id="count-tools">20</span>
+            <span class="section-icon">🤖</span>
+            <span class="section-title">AI Tools</span>
+            <span class="section-count">4</span>
         </div>
-        <div class="grid" id="grid-tools">
-            <a class="card" href="/age-calculator/" data-search="age calculator birthday years days">
-                <div class="card-top"><span class="card-icon">🎂</span><span class="card-name">Age Calculator</span></div>
-                <div class="card-desc">Find your exact age in years, months, days, hours, minutes, seconds.</div>
+        <div class="grid" id="grid-ai">
+            <a class="card" href="/face-swap/" data-search="face swap ai photo deepfake">
+                <span class="card-tag hot">Hot</span>
+                <div class="card-top"><span class="card-icon">🎭</span><span class="card-name">AI Face Swap</span></div>
+                <div class="card-desc">Swap faces in photos using AI. Private, no upload.</div>
             </a>
-            <a class="card" href="/percentage-calculator/" data-search="percentage calculator percent change increase">
-                <div class="card-top"><span class="card-icon">%</span><span class="card-name">Percentage Calculator</span></div>
-                <div class="card-desc">Percent of, change, increase, decrease with step-by-step solutions.</div>
-            </a>
-            <a class="card" href="/word-counter/" data-search="word counter character count text">
-                <div class="card-top"><span class="card-icon">📝</span><span class="card-name">Word Counter</span></div>
-                <div class="card-desc">Count words, characters, sentences, reading time, keyword density.</div>
-            </a>
-            <a class="card" href="/bmi-calculator/" data-search="bmi calculator body mass index weight">
-                <div class="card-top"><span class="card-icon">📊</span><span class="card-name">BMI Calculator</span></div>
-                <div class="card-desc">Check your healthy weight range. Metric and imperial support.</div>
-            </a>
-            <a class="card" href="/image-resizer/" data-search="image resizer resize photo compress convert">
+            <a class="card" href="/ai-avatar-generator/" data-search="ai avatar generator cartoon anime profile picture maker">
                 <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">📐</span><span class="card-name">Image Resizer</span></div>
-                <div class="card-desc">Resize images, compress, convert to PNG/JPG/WebP. No upload.</div>
+                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name">AI Avatar Generator</span></div>
+                <div class="card-desc">Transform photos into cartoon, anime, oil painting & more.</div>
             </a>
             <a class="card" href="/background-remover/" data-search="background remover remove background image transparent png ai">
                 <span class="card-tag new">New</span>
                 <div class="card-top"><span class="card-icon">✂️</span><span class="card-name">Background Remover</span></div>
                 <div class="card-desc">Remove image backgrounds with AI. Free, no upload, transparent PNG.</div>
             </a>
+            <a class="card" href="/pixel-art/" data-search="pixel art image converter 8-bit retro photo">
+                <span class="card-tag new">New</span>
+                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name">Pixel Art</span></div>
+                <div class="card-desc">Convert photos to 8-bit pixel art. 6 retro palettes.</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 🖼️ Image Tools -->
+    <div class="section" id="sec-image">
+        <div class="section-header">
+            <span class="section-icon">🖼️</span>
+            <span class="section-title">Image Tools</span>
+            <span class="section-count">3</span>
+        </div>
+        <div class="grid" id="grid-image">
+            <a class="card" href="/image-resizer/" data-search="image resizer resize photo compress convert">
+                <span class="card-tag new">New</span>
+                <div class="card-top"><span class="card-icon">📐</span><span class="card-name">Image Resizer</span></div>
+                <div class="card-desc">Resize images, compress, convert to PNG/JPG/WebP. No upload.</div>
+            </a>
             <a class="card" href="/ascii-art/" data-search="ascii art generator image to text art converter">
                 <span class="card-tag new">New</span>
                 <div class="card-top"><span class="card-icon">💻</span><span class="card-name">ASCII Art</span></div>
                 <div class="card-desc">Convert images to ASCII text art. 6 styles, color mode, download.</div>
             </a>
+            <a class="card" href="/color-tool/" data-search="color tool hex rgb hsl picker gradient">
+                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name">Color Tool</span></div>
+                <div class="card-desc">Pick colors, convert HEX/RGB/HSL, generate CSS gradients.</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 💻 Developer Tools -->
+    <div class="section" id="sec-dev">
+        <div class="section-header">
+            <span class="section-icon">💻</span>
+            <span class="section-title">Developer Tools</span>
+            <span class="section-count">3</span>
+        </div>
+        <div class="grid" id="grid-dev">
+            <a class="card" href="/json-formatter/" data-search="json formatter validator beautifier minifier parser">
+                <span class="card-tag new">New</span>
+                <div class="card-top"><span class="card-icon">{}</span><span class="card-name">JSON Formatter</span></div>
+                <div class="card-desc">Beautify, minify, validate JSON. Tree view, syntax highlight.</div>
+            </a>
+            <a class="card" href="/timestamp-converter/" data-search="timestamp converter unix epoch time date">
+                <span class="card-tag new">New</span>
+                <div class="card-top"><span class="card-icon">⏱️</span><span class="card-name">Timestamp Converter</span></div>
+                <div class="card-desc">Convert Unix timestamp to date and vice versa. Live epoch time.</div>
+            </a>
+            <a class="card" href="/linux-commands/" data-search="linux commands cheat sheet terminal bash">
+                <div class="card-top"><span class="card-icon">🐧</span><span class="card-name">Linux Commands</span></div>
+                <div class="card-desc">200+ commands with examples. Search and filter by category.</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 🛠️ Calculators -->
+    <div class="section" id="sec-calc">
+        <div class="section-header">
+            <span class="section-icon">🛠️</span>
+            <span class="section-title">Calculators</span>
+            <span class="section-count">6</span>
+        </div>
+        <div class="grid" id="grid-calc">
             <a class="card" href="/mortgage-calculator/" data-search="mortgage calculator loan payment amortization">
                 <div class="card-top"><span class="card-icon">🏠</span><span class="card-name">Mortgage Calculator</span></div>
                 <div class="card-desc">Monthly payments, total interest, amortization schedule.</div>
+            </a>
+            <a class="card" href="/age-calculator/" data-search="age calculator birthday years days">
+                <div class="card-top"><span class="card-icon">🎂</span><span class="card-name">Age Calculator</span></div>
+                <div class="card-desc">Find your exact age in years, months, days, hours, minutes, seconds.</div>
+            </a>
+            <a class="card" href="/bmi-calculator/" data-search="bmi calculator body mass index weight">
+                <div class="card-top"><span class="card-icon">📊</span><span class="card-name">BMI Calculator</span></div>
+                <div class="card-desc">Check your healthy weight range. Metric and imperial support.</div>
+            </a>
+            <a class="card" href="/percentage-calculator/" data-search="percentage calculator percent change increase">
+                <div class="card-top"><span class="card-icon">%</span><span class="card-name">Percentage Calculator</span></div>
+                <div class="card-desc">Percent of, change, increase, decrease with step-by-step solutions.</div>
+            </a>
+            <a class="card" href="/currency-converter/" data-search="currency converter exchange rate forex money">
+                <span class="card-tag new">New</span>
+                <div class="card-top"><span class="card-icon">💱</span><span class="card-name">Currency Converter</span></div>
+                <div class="card-desc">Real-time exchange rates for 150+ currencies. Instant, free.</div>
             </a>
             <a class="card" href="/unit-converter/" data-search="unit converter length weight temperature area volume speed">
                 <div class="card-top"><span class="card-icon">📐</span><span class="card-name">Unit Converter</span></div>
                 <div class="card-desc">Convert length, weight, temp, area, volume, speed.</div>
             </a>
+        </div>
+    </div>
+
+    <!-- ⚡ Productivity -->
+    <div class="section" id="sec-prod">
+        <div class="section-header">
+            <span class="section-icon">⚡</span>
+            <span class="section-title">Productivity</span>
+            <span class="section-count">7</span>
+        </div>
+        <div class="grid" id="grid-prod">
             <a class="card" href="/qr-code-generator/" data-search="qr code generator create qr png">
                 <div class="card-top"><span class="card-icon">📱</span><span class="card-name">QR Code Generator</span></div>
                 <div class="card-desc">Create custom QR codes for URLs, text, email. Download PNG.</div>
@@ -278,44 +356,45 @@
                 <div class="card-top"><span class="card-icon">🔑</span><span class="card-name">Password Generator</span></div>
                 <div class="card-desc">Generate strong, random passwords. Customizable options.</div>
             </a>
-            <a class="card" href="/color-tool/" data-search="color tool hex rgb hsl picker gradient">
-                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name">Color Tool</span></div>
-                <div class="card-desc">Pick colors, convert HEX/RGB/HSL, generate CSS gradients.</div>
-            </a>
-            <a class="card" href="/countdown-timer/" data-search="countdown timer new year christmas date days until">
-                <div class="card-top"><span class="card-icon">⏳</span><span class="card-name">Countdown Timer</span></div>
-                <div class="card-desc">Count down to any date — New Year, Christmas, custom events.</div>
-            </a>
-            <a class="card" href="/random-number-generator/" data-search="random number generator pick number raffle lottery">
-                <div class="card-top"><span class="card-icon">🎲</span><span class="card-name">Random Number</span></div>
-                <div class="card-desc">Pick a random number within any range. Multiple numbers, no repeats.</div>
-            </a>
-            <a class="card" href="/stopwatch/" data-search="stopwatch timer lap precision milliseconds">
-                <div class="card-top"><span class="card-icon">⏱️</span><span class="card-name">Stopwatch</span></div>
-                <div class="card-desc">Precise stopwatch with lap timing. Millisecond accuracy.</div>
-            </a>
-            <a class="card" href="/typing-test/" data-search="typing test wpm speed keyboard">
-                <div class="card-top"><span class="card-icon">⌨️</span><span class="card-name">Typing Test</span></div>
-                <div class="card-desc">Test your typing speed and accuracy. WPM, modes, quotes.</div>
-            </a>
-            <a class="card" href="/linux-commands/" data-search="linux commands cheat sheet terminal bash">
-                <div class="card-top"><span class="card-icon">🐧</span><span class="card-name">Linux Commands</span></div>
-                <div class="card-desc">200+ commands with examples. Search and filter by category.</div>
-            </a>
             <a class="card" href="/text-to-speech/" data-search="text to speech tts voice generator speech synthesis">
                 <span class="card-tag new">New</span>
                 <div class="card-top"><span class="card-icon">🔊</span><span class="card-name">Text to Speech</span></div>
                 <div class="card-desc">Convert text to speech. Multiple languages, voices, speed & pitch.</div>
             </a>
-            <a class="card" href="/currency-converter/" data-search="currency converter exchange rate forex money">
-                <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">💱</span><span class="card-name">Currency Converter</span></div>
-                <div class="card-desc">Real-time exchange rates for 150+ currencies. Instant, free.</div>
+            <a class="card" href="/word-counter/" data-search="word counter character count text">
+                <div class="card-top"><span class="card-icon">📝</span><span class="card-name">Word Counter</span></div>
+                <div class="card-desc">Count words, characters, sentences, reading time, keyword density.</div>
             </a>
-            <a class="card" href="/json-formatter/" data-search="json formatter validator beautifier minifier parser">
-                <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">{}</span><span class="card-name">JSON Formatter</span></div>
-                <div class="card-desc">Beautify, minify, validate JSON. Tree view, syntax highlight.</div>
+            <a class="card" href="/typing-test/" data-search="typing test wpm speed keyboard">
+                <div class="card-top"><span class="card-icon">⌨️</span><span class="card-name">Typing Test</span></div>
+                <div class="card-desc">Test your typing speed and accuracy. WPM, modes, quotes.</div>
+            </a>
+            <a class="card" href="/countdown-timer/" data-search="countdown timer new year christmas date days until">
+                <div class="card-top"><span class="card-icon">⏳</span><span class="card-name">Countdown Timer</span></div>
+                <div class="card-desc">Count down to any date — New Year, Christmas, custom events.</div>
+            </a>
+            <a class="card" href="/stopwatch/" data-search="stopwatch timer lap precision milliseconds">
+                <div class="card-top"><span class="card-icon">⏱️</span><span class="card-name">Stopwatch</span></div>
+                <div class="card-desc">Precise stopwatch with lap timing. Millisecond accuracy.</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 🎲 Fun Tools -->
+    <div class="section" id="sec-funtools">
+        <div class="section-header">
+            <span class="section-icon">🎲</span>
+            <span class="section-title">Fun Tools</span>
+            <span class="section-count">2</span>
+        </div>
+        <div class="grid" id="grid-funtools">
+            <a class="card" href="/random-number-generator/" data-search="random number generator pick number raffle lottery">
+                <div class="card-top"><span class="card-icon">🎲</span><span class="card-name">Random Number</span></div>
+                <div class="card-desc">Pick a random number within any range. Multiple numbers, no repeats.</div>
+            </a>
+            <a class="card" href="/wheel-spinner/" data-search="wheel spinner random decision maker spin">
+                <div class="card-top"><span class="card-icon">🎡</span><span class="card-name">Wheel Spinner</span></div>
+                <div class="card-desc">Random decision maker. Spin the wheel for choices.</div>
             </a>
         </div>
     </div>
@@ -357,12 +436,12 @@
         </div>
     </div>
 
-    <!-- ✨ Fun & Lifestyle -->
+    <!-- 🧪 Tests & Quizzes -->
     <div class="section" id="sec-fun">
         <div class="section-header">
-            <span class="section-icon">✨</span>
-            <span class="section-title">Fun &amp; Lifestyle</span>
-            <span class="section-count" id="count-fun">10</span>
+            <span class="section-icon">🧪</span>
+            <span class="section-title">Tests &amp; Quizzes</span>
+            <span class="section-count">4</span>
         </div>
         <div class="grid" id="grid-fun">
             <a class="card" href="/mbti-test/" data-search="mbti personality test 16 personalities myers briggs INTJ INFP">
@@ -375,34 +454,26 @@
                 <div class="card-top"><span class="card-icon">💕</span><span class="card-name">Couple Test</span></div>
                 <div class="card-desc">Test your compatibility across 5 dimensions. 10 fun questions!</div>
             </a>
-            <a class="card" href="/ai-avatar-generator/" data-search="ai avatar generator cartoon anime profile picture maker">
-                <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name">AI Avatar Generator</span></div>
-                <div class="card-desc">Transform photos into cartoon, anime, oil painting & more.</div>
+            <a class="card" href="/fun-tests/" data-search="fun tests personality quiz love calculator">
+                <div class="card-top"><span class="card-icon">✨</span><span class="card-name">FunTests</span></div>
+                <div class="card-desc">Personality quizzes, love calculator, psychological age test.</div>
             </a>
             <a class="card" href="/daily-horoscope/" data-search="horoscope zodiac astrology daily forecast">
                 <span class="card-tag hot">Daily</span>
                 <div class="card-top"><span class="card-icon">♈</span><span class="card-name">Daily Horoscope</span></div>
                 <div class="card-desc">Today's zodiac forecast for all 12 signs. Updated daily.</div>
             </a>
-            <a class="card" href="/pixel-art/" data-search="pixel art image converter 8-bit retro photo">
-                <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name">Pixel Art</span></div>
-                <div class="card-desc">Convert photos to 8-bit pixel art. 6 retro palettes.</div>
-            </a>
-            <a class="card" href="/face-swap/" data-search="face swap ai photo deepfake">
-                <span class="card-tag hot">Hot</span>
-                <div class="card-top"><span class="card-icon">🎭</span><span class="card-name">AI Face Swap</span></div>
-                <div class="card-desc">Swap faces in photos using AI. Private, no upload.</div>
-            </a>
-            <a class="card" href="/fun-tests/" data-search="fun tests personality quiz love calculator">
-                <div class="card-top"><span class="card-icon">✨</span><span class="card-name">FunTests</span></div>
-                <div class="card-desc">Personality quizzes, love calculator, psychological age test.</div>
-            </a>
-            <a class="card" href="/wheel-spinner/" data-search="wheel spinner random decision maker spin">
-                <div class="card-top"><span class="card-icon">🎡</span><span class="card-name">Wheel Spinner</span></div>
-                <div class="card-desc">Random decision maker. Spin the wheel for choices.</div>
-            </a>
+        </div>
+    </div>
+
+    <!-- 🎨 Creative -->
+    <div class="section" id="sec-creative">
+        <div class="section-header">
+            <span class="section-icon">🎨</span>
+            <span class="section-title">Creative</span>
+            <span class="section-count">2</span>
+        </div>
+        <div class="grid" id="grid-creative">
             <a class="card" href="/firework-fun/" data-search="firework fireworks click particle effects canvas fun">
                 <span class="card-tag new">New</span>
                 <div class="card-top"><span class="card-icon">🎆</span><span class="card-name">Firework Fun</span></div>
@@ -451,9 +522,14 @@
         <h2>About JimmyWithFiona</h2>
         <p>JimmyWithFiona is a collection of 25+ free online tools, games, and daily content. All apps run entirely in your browser — no downloads, no signups, no data collection. Whether you want to play Wordle, check your daily horoscope, resize an image, learn Linux commands, or calculate your age down to the second, we've got you covered.</p>
         <h2>What's Inside?</h2>
-        <p><strong>Calculators &amp; Tools:</strong> Age calculator, percentage calculator, word counter, BMI calculator, image resizer, pixel art converter, typing test, Linux commands cheat sheet, mortgage calculator, unit converter, QR code generator, password generator, color tool, countdown timer, random number generator, and stopwatch. All calculations and conversions happen instantly in your browser.</p>
-        <p><strong>Games:</strong> Wordle daily word puzzle, Minesweeper, 2048, brick breaker arcade, and a fully interactive Windows 98 simulator. Each game features smooth animations, touch controls, and local saving.</p>
-        <p><strong>Fun &amp; Lifestyle:</strong> Daily horoscope for all 12 zodiac signs, pixel art converter, personality quizzes, love calculator, psychological age test, and a spinning wheel for random decisions. Each test generates shareable results.</p>
+        <p><strong>AI Tools:</strong> AI Face Swap, AI Avatar Generator, Background Remover, and Pixel Art converter. All AI processing happens locally in your browser.</p>
+        <p><strong>Image Tools:</strong> Image Resizer, ASCII Art generator, and Color Tool (HEX/RGB/HSL converter and gradient generator).</p>
+        <p><strong>Developer Tools:</strong> JSON Formatter & Validator, Unix Timestamp Converter, and Linux Commands cheat sheet. Built for programmers.</p>
+        <p><strong>Calculators:</strong> Mortgage calculator, age calculator, BMI calculator, percentage calculator, currency converter, and unit converter.</p>
+        <p><strong>Productivity:</strong> QR code generator, password generator, text to speech, word counter, typing test, countdown timer, and stopwatch.</p>
+        <p><strong>Games:</strong> Wordle daily word puzzle, Minesweeper, 2048, brick breaker arcade, Snake, and a Windows 98 simulator.</p>
+        <p><strong>Tests &amp; Quizzes:</strong> MBTI personality test, couple compatibility test, FunTests (love calculator, spirit animal, psychological age), and daily horoscope.</p>
+        <p><strong>Creative:</strong> Firework Fun (interactive particle effects) and Online Piano (8 instruments, recording, demo songs).</p>
         <p><strong>News:</strong> WorldPulse live international news dashboard with real-time headlines from top global outlets and world clocks for major cities.</p>
         <h2>Why Use JimmyWithFiona?</h2>
         <p>Everything is <strong>100% free</strong> with no limits. All tools work offline once loaded, respect your privacy by processing data locally, and are optimized for both desktop and mobile devices. New tools and games are added regularly. Bookmark this page for quick access to all your everyday tools and entertainment.</p>
