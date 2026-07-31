@@ -681,7 +681,14 @@ function animateBg() {
     bgCtx.globalAlpha = 1;
     requestAnimationFrame(animateBg);
 }
-animateBg();
+
+// Only start animation if device can handle it
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && !navigator.userAgent.includes('Mobile')) {
+    animateBg();
+} else {
+    // Static gradient fallback for mobile/reduced-motion
+    bgCanvas.style.background = 'radial-gradient(circle at 50% 30%, rgba(79,140,255,.03) 0%, transparent 50%)';
+}
 </script>
 </body>
 </html>
