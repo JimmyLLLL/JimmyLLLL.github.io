@@ -8,7 +8,7 @@
     <link rel="dns-prefetch" href="https://api.counterapi.dev">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0b0f">
-    <meta name="description" content="JimmyWithFiona — 25+ free online tools, games, and daily content. Wordle, AI face swap, AI avatar generator, mortgage calculator, QR code generator, password generator, unit converter, minesweeper, image resizer, pixel art, horoscope, and more. No signup, no download.">
+    <meta name="description" content="JimmyWithFiona — 35+ free online tools, games, and daily content. Wordle, AI face swap, AI avatar generator, mortgage calculator, QR code generator, password generator, unit converter, minesweeper, image resizer, pixel art, horoscope, and more. No signup, no download.">
     <meta name="keywords" content="online tools, free tools, web games, wordle, minesweeper, linux commands, image resizer, pixel art, horoscope, word counter, typing test, age calculator, percentage calculator, BMI calculator, 2048, AI face swap, AI avatar generator, mortgage calculator, QR code generator, password generator, unit converter, color tool, countdown timer, stopwatch">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jimmywithfiona.com/">
@@ -18,16 +18,16 @@
     <meta name="google-site-verification" content="ePxMXHXzaRnnqr_OmaA9sww5PXXnX85txqf-sPPfrJE" />
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="JimmyWithFiona">
-    <meta property="og:title" content="JimmyWithFiona — 25+ Free Online Tools, Games & Daily Content">
+    <meta property="og:title" content="JimmyWithFiona — 35+ Free Online Tools, Games & Daily Content">
     <meta property="og:description" content="Wordle, Minesweeper, Linux commands, image resizer, pixel art, horoscope, calculators, and more. All free, no signup.">
     <meta property="og:url" content="https://jimmywithfiona.com/">
     <meta property="og:image" content="https://jimmywithfiona.com/og.png">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JimmyWithFiona — 25+ Free Online Tools & Games">
+    <meta name="twitter:title" content="JimmyWithFiona — 35+ Free Online Tools & Games">
     <meta name="twitter:description" content="Wordle, Minesweeper, Linux commands, image tools, horoscope, calculators, and more.">
     <meta name="twitter:image" content="https://jimmywithfiona.com/og.png">
-    <title>JimmyWithFiona — 25+ Free Online Tools, Games & Daily Content</title>
+    <title>JimmyWithFiona — 35+ Free Online Tools, Games & Daily Content</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -141,7 +141,7 @@
         }
         .card:hover {
             transform: translateY(-6px) scale(1.02); border-color: var(--accent);
-            box-shadow: 0 12px 32px rgba(79,140,255,.15), 0 0 0 1px rgba(79,140,255,.1);
+            box-shadow: 0 12px 32px rgba(79,140,255,.18), 0 0 0 1px rgba(79,140,255,.25), 0 0 28px rgba(155,89,182,.12);
         }
         .card:hover::before { opacity: 1; }
         .card:hover::after { opacity: 1; }
@@ -181,6 +181,48 @@
         footer .footer-links { margin-bottom: .5rem; }
         footer .cross-links { margin-top: .6rem; font-size: .72rem; opacity: .6; }
 
+        /* Scroll progress bar */
+        .scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px; width: 0;
+            background: linear-gradient(90deg, var(--accent), var(--purple), var(--pink), var(--gold));
+            z-index: 100; transition: width .1s ease-out;
+            box-shadow: 0 0 10px rgba(79,140,255,.5);
+        }
+
+        /* Hero grid texture */
+        .hero-grid {
+            position: absolute; inset: 0; pointer-events: none; opacity: .4;
+            background-image:
+                linear-gradient(rgba(79,140,255,.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(79,140,255,.06) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+        }
+
+        /* Section title underline */
+        .section-title { position: relative; }
+        .section-title::after {
+            content: ''; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0;
+            background: linear-gradient(90deg, var(--accent), var(--pink));
+            transition: width .4s ease;
+        }
+        .section.visible .section-title::after { width: 100%; }
+
+        /* Back-to-top button */
+        .back-top {
+            position: fixed; bottom: 1.5rem; right: 1.5rem; width: 46px; height: 46px;
+            border-radius: 50%; border: 1px solid var(--border-2);
+            background: rgba(22,25,34,.8); backdrop-filter: blur(10px); color: var(--text);
+            font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            opacity: 0; transform: translateY(12px); pointer-events: none; transition: all .3s; z-index: 90;
+        }
+        .back-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .back-top:hover {
+            border-color: var(--accent); color: var(--accent-hover);
+            box-shadow: 0 8px 24px rgba(79,140,255,.25); transform: translateY(-2px);
+        }
+
         @media (max-width: 600px) {
             .hero { padding: 2.5rem 1rem 1.5rem; }
             .hero h1 { font-size: 2rem; }
@@ -209,16 +251,16 @@
     <link rel="prefetch" href="/daily-horoscope/">
     <link rel="prefetch" href="/image-resizer/">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebSite","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/","description":"Collection of 25+ free online tools, games, and daily content","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://jimmywithfiona.com/?q={search_term_string}"},"query-input":"required name=search_term_string"},"publisher":{"@type":"Organization","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/"}}
+    {"@context":"https://schema.org","@type":"WebSite","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/","description":"Collection of 35+ free online tools, games, and daily content","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://jimmywithfiona.com/?q={search_term_string}"},"query-input":"required name=search_term_string"},"publisher":{"@type":"Organization","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/"}}
     </script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Organization","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/","description":"Free online tools, games, and daily content"}
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is JimmyWithFiona?","acceptedAnswer":{"@type":"Answer","text":"JimmyWithFiona is a collection of 25+ free online tools, games, and daily content. Everything runs in your browser — no downloads, no signups, no data collection."}},{"@type":"Question","name":"Are all tools free?","acceptedAnswer":{"@type":"Answer","text":"Yes, every tool, game, and test is 100% free with no hidden costs, no signup, and no download required."}},{"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes, all tools are fully responsive and optimized for touch screens on phones and tablets."}},{"@type":"Question","name":"Is my data safe?","acceptedAnswer":{"@type":"Answer","text":"Yes. All processing happens locally in your browser. We don't collect, store, or transmit your data."}}]}
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is JimmyWithFiona?","acceptedAnswer":{"@type":"Answer","text":"JimmyWithFiona is a collection of 35+ free online tools, games, and daily content. Everything runs in your browser — no downloads, no signups, no data collection."}},{"@type":"Question","name":"Are all tools free?","acceptedAnswer":{"@type":"Answer","text":"Yes, every tool, game, and test is 100% free with no hidden costs, no signup, and no download required."}},{"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes, all tools are fully responsive and optimized for touch screens on phones and tablets."}},{"@type":"Question","name":"Is my data safe?","acceptedAnswer":{"@type":"Answer","text":"Yes. All processing happens locally in your browser. We don't collect, store, or transmit your data."}}]}
     </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/","applicationCategory":"MultimediaApplication","operatingSystem":"Any (Web Browser)","description":"Collection of 25+ free online tools, games, and daily content. All apps run entirely in your browser — no downloads, no signups, no data collection.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"JimmyWithFiona","url":"https://jimmywithfiona.com/","applicationCategory":"MultimediaApplication","operatingSystem":"Any (Web Browser)","description":"Collection of 35+ free online tools, games, and daily content. All apps run entirely in your browser — no downloads, no signups, no data collection.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jimmywithfiona.com/"}]}
@@ -226,9 +268,11 @@
 </head>
 <body>
 <canvas class="bg-canvas" id="bgCanvas"></canvas>
+<div class="scroll-progress" id="scrollProgress"></div>
 <header class="hero">
+    <div class="hero-grid"></div>
     <h1>JimmyWithFiona</h1>
-    <p>25+ free online tools, games &amp; daily content — all in one place.</p>
+    <p>35+ free online tools, games &amp; daily content — all in one place.</p>
     <div class="hero-badges">
         <span class="hero-badge">⚡ <strong>Instant</strong> — no signup</span>
         <span class="hero-badge">🔒 <strong>Private</strong> — runs in browser</span>
@@ -237,7 +281,7 @@
     </div>
     <div class="search-wrap">
         <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" id="searchInput" placeholder="Search 30+ tools and games..." autocomplete="off">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search 35+ tools and games..." autocomplete="off">
     </div>
 </header>
 <main class="container">
@@ -531,7 +575,7 @@
         <span class="stat-divider">|</span>
         <span>👤 Visitors <strong id="uv">-</strong></span>
         <span class="stat-divider">|</span>
-        <span>🛠️ <strong>25+</strong> Tools</span>
+        <span>🛠️ <strong>35+</strong> Tools</span>
         <span class="stat-divider">|</span>
         <span>🔒 <strong>100%</strong> Private</span>
     </div>
@@ -539,7 +583,7 @@
     <!-- SEO content -->
     <div class="seo-section">
         <h2>About JimmyWithFiona</h2>
-        <p>JimmyWithFiona is a collection of 25+ free online tools, games, and daily content. All apps run entirely in your browser — no downloads, no signups, no data collection. Whether you want to play Wordle, check your daily horoscope, resize an image, learn Linux commands, or calculate your age down to the second, we've got you covered.</p>
+        <p>JimmyWithFiona is a collection of 35+ free online tools, games, and daily content. All apps run entirely in your browser — no downloads, no signups, no data collection. Whether you want to play Wordle, check your daily horoscope, resize an image, learn Linux commands, or calculate your age down to the second, we've got you covered.</p>
         <h2>What's Inside?</h2>
         <p><strong>AI Tools:</strong> AI Face Swap, AI Avatar Generator, Background Remover, and Pixel Art converter. All AI processing happens locally in your browser.</p>
         <p><strong>Image Tools:</strong> Image Resizer, ASCII Art generator, and Color Tool (HEX/RGB/HSL converter and gradient generator).</p>
@@ -575,9 +619,10 @@
 </main>
 <footer>
     <p class="footer-links"><a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a></p>
-    <p>JimmyWithFiona © 2026 · 25+ free online tools, games &amp; daily content</p>
+    <p>JimmyWithFiona © 2026 · 35+ free online tools, games &amp; daily content</p>
     <div class="cross-links">More: <a href="/wordle/">Wordle</a> · <a href="/minesweeper/">Minesweeper</a> · <a href="/daily-horoscope/">Horoscope</a> · <a href="/linux-commands/">Linux Commands</a> · <a href="/pixel-art/">Pixel Art</a> · <a href="/image-resizer/">Image Resizer</a></div>
 </footer>
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 <script>
 // Search
 const searchInput = document.getElementById("searchInput");
@@ -615,6 +660,16 @@ if (!localStorage.getItem(uvKey)) {
         .then(d => { document.getElementById("uv").textContent = (d.count || 0).toLocaleString(); })
         .catch(() => { document.getElementById("uv").textContent = "N/A"; });
 }
+
+// === Scroll progress + back-to-top ===
+const scrollProgress = document.getElementById("scrollProgress");
+const backTop = document.getElementById("backTop");
+window.addEventListener("scroll", () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    scrollProgress.style.width = (window.scrollY / h * 100) + "%";
+    backTop.classList.toggle("show", window.scrollY > 500);
+}, { passive: true });
+backTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
 // === Scroll reveal animation ===
 const observer = new IntersectionObserver((entries) => {
@@ -659,8 +714,11 @@ function animateBg() {
         bgCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         bgCtx.fillStyle = p.color;
         bgCtx.globalAlpha = p.alpha;
+        bgCtx.shadowBlur = 8;
+        bgCtx.shadowColor = p.color;
         bgCtx.fill();
     });
+    bgCtx.shadowBlur = 0;
     bgCtx.globalAlpha = 1;
     for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
