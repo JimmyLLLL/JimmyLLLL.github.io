@@ -71,5 +71,35 @@
 <footer style="text-align:center;padding:1.5rem;color:#7a8190;font-size:0.75rem;border-top:1px solid #232733;">
     <p>JimmyWithFiona © 2026 · Free online tools, games & tests</p>
 </footer>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||'en').toLowerCase();
+if(!lang.startsWith('zh'))return;
+var ZH={"About JimmyWithFiona":"关于 JimmyWithFiona","Free online tools, games, and fun tests — all in one place.":"免费在线工具、游戏和趣味测试——全部汇聚一处。","Our Mission":"我们的使命","JimmyWithFiona is a collection of free, fast, and privacy-friendly web applications. We believe that useful online tools should be accessible to everyone — no downloads, no signups, no hidden costs. Every tool on our site runs entirely in your browser, meaning your data never leaves your device.":"JimmyWithFiona 是一组免费、快速且注重隐私的网络应用。我们相信，实用的在线工具应该人人可用——无需下载、无需注册、没有隐藏费用。我们网站上的每个工具都在你的浏览器中运行，这意味着你的数据永远不会离开你的设备。","What We Offer":"我们提供的内容","Our platform hosts 10 distinct web applications across four categories:":"我们的平台托管了 10 款各具特色的网络应用，分为四大类：","Tools:":"工具：","Mortgage calculator, unit converter, QR code generator, password generator, color tool, countdown timer, random number generator, stopwatch, word counter, and BMI calculator. These cover everyday needs from finance to health to productivity.":"房贷计算器、单位换算器、二维码生成器、密码生成器、颜色工具、倒计时器、随机数生成器、秒表、字数统计器，以及 BMI 计算器。涵盖从财务、健康到生产力的日常需求。","Games:":"游戏：","2048 puzzle game, classic brick breaker arcade, and a fully interactive Windows 98 simulator with working Notepad, Calculator, Paint, and Minesweeper.":"2048 益智游戏、经典打砖块街机游戏，以及一个完全可交互的 Windows 98 模拟器，内含可用的记事本、计算器、画图和扫雷。","Fun Tests:":"趣味测试：","Personality quizzes including \"What Animal Are You?\", a love compatibility calculator, psychological age test, and a spinning wheel for random decisions. Perfect for sharing with friends.":"性格测试，包括“你是哪种动物？”、恋爱契合度计算器、心理年龄测试，以及用于随机决策的转盘。非常适合与朋友分享。","News:":"新闻：","WorldPulse, a live international news dashboard with real-time headlines from top global outlets and world clocks.":"WorldPulse，一个实时国际新闻看板，提供来自全球顶级媒体的实时头条和世界时钟。","Privacy First":"隐私优先","All tools process data locally in your browser. We do not require accounts, do not collect personal information, and do not store your inputs. Your text, calculations, drawings, and game scores exist only in your browser session. Read our full":"所有工具都在你的浏览器中本地处理数据。我们不需要账号，不收集个人信息，也不存储你的输入。你的文本、计算结果、绘图和游戏分数仅存在于你的浏览器会话中。阅读完整的","privacy policy":"隐私政策","for details.":"了解详情。","How We Stay Free":"我们如何保持免费","JimmyWithFiona is supported by advertising through Google AdSense. Ads help us cover hosting costs and keep all tools free for everyone. We never charge for access to any tool, game, or test on our site.":"JimmyWithFiona 通过 Google AdSense 广告获得支持。广告帮助我们承担托管成本，让所有工具对所有人保持免费。我们绝不会对网站上的任何工具、游戏或测试收取费用。","Technology":"技术","All applications are built with vanilla HTML, CSS, and JavaScript — no frameworks, no heavy dependencies. This ensures fast loading times, broad compatibility, and minimal resource usage. The entire site is hosted on GitHub Pages with a custom domain and HTTPS.":"所有应用均使用原生 HTML、CSS 和 JavaScript 构建——没有框架，没有繁重的依赖。这确保了快速加载、广泛兼容和最少的资源消耗。整个网站托管在 GitHub Pages 上，使用自定义域名和 HTTPS。","Contact":"联系我们","Have feedback, found a bug, or want to suggest a new tool? Visit our":"有反馈、发现 Bug，还是想建议新工具？请访问我们的","contact page":"联系页面","— we'd love to hear from you!":"——我们很乐意听到你的声音！","← Back to Home":"← 返回首页","JimmyWithFiona © 2026 · Free online tools, games & tests":"JimmyWithFiona © 2026 · 免费在线工具、游戏和测试"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=='SCRIPT'&&node.tagName!=='STYLE'&&node.tagName!=='NOSCRIPT'){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang='zh-CN';
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==='childList'){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==='characterData'){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>

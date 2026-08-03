@@ -78,5 +78,35 @@ footer a{color:var(--hover);text-decoration:none}
     <p><a href="/">Home</a> · <a href="/tools/">All Tools</a> · <a href="/games/">Games</a></p>
     <p>© 2026 JimmyWithFiona · Free AI Tools</p>
 </footer>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||"en").toLowerCase();
+if(!lang.startsWith("zh"))return;
+var ZH={"AI Tools":"AI 工具","All Tools":"所有工具","Games":"游戏","Home":"首页","Free AI Tools":"免费 AI 工具","5 powerful AI tools that run entirely in your browser. No upload, no signup, 100% private.":"5 款强大的 AI 工具，完全在你的浏览器中运行。无需上传、无需注册、100% 隐私。","AI Face Swap":"AI 换脸","Swap faces in photos using AI. Private, no upload.":"使用 AI 在照片中换脸。隐私安全，无需上传。","AI Avatar Generator":"AI 头像生成器","Transform photos into cartoon, anime, oil painting & more.":"将照片转换为卡通、动漫、油画等多种风格。","Background Remover":"背景移除器","Remove image backgrounds with AI. Free, transparent PNG.":"用 AI 移除图片背景。免费，透明 PNG。","Meme Generator":"表情包生成器","Turn photos into memes. Text, stickers, filters, 10+ templates.":"将照片变成表情包。文字、贴纸、滤镜，10+ 模板。","Pixel Art":"像素艺术","Convert photos to 8-bit pixel art. 6 retro palettes.":"将照片转换为 8 位像素艺术。6 种复古调色板。","AI Tools — Free & Private":"AI 工具——免费且隐私","Our AI tools collection brings you 5 powerful artificial intelligence utilities that run 100% in your browser. Unlike cloud-based AI tools that require you to upload your photos to a server, our tools process everything locally using JavaScript and Canvas API. Your images never leave your device, ensuring complete privacy and security.":"我们的 AI 工具合集为你带来 5 款强大的人工智能工具，100% 在你的浏览器中运行。与需要你将照片上传到服务器的云端 AI 工具不同，我们的工具使用 JavaScript 和 Canvas API 在本地处理一切。你的图片永远不会离开你的设备，确保完全的隐私和安全。","AI Face Swap Online":"AI 在线换脸","Our AI Face Swap tool uses face-api.js with TinyFaceDetector and 68-point facial landmarks to detect faces, then applies Delaunay triangulation and Lab color space blending for realistic face swaps. All processing happens in your browser — no server, no upload, complete privacy.":"我们的 AI 换脸工具使用 face-api.js 结合 TinyFaceDetector 和 68 点面部特征点来检测人脸，然后应用 Delaunay 三角剖分和 Lab 颜色空间混合来实现逼真的换脸效果。所有处理都在你的浏览器中进行——无需服务器、无需上传、完全隐私。","Transform your photos into 6 different art styles: cartoon, anime, oil painting, sketch, cyberpunk, and vintage. The avatar generator applies pixel-level Canvas filters including bilateral smoothing, color quantization, edge detection, and Lab color space adjustments.":"将你的照片转换为 6 种不同艺术风格：卡通、动漫、油画、素描、赛博朋克和复古。头像生成器应用像素级 Canvas 滤镜，包括双边平滑、颜色量化、边缘检测和 Lab 颜色空间调整。","AI Background Remover":"AI 背景移除器","Remove image backgrounds instantly with AI. The tool uses on-device machine learning to detect foreground subjects and produce transparent PNG output. Perfect for product photos, profile pictures, and graphic design — no upload required.":"用 AI 即时移除图片背景。该工具使用设备端机器学习来检测前景主体并生成透明 PNG 输出。非常适合产品图片、头像照片和平面设计——无需上传。","Meme Generator with Text & Stickers":"带文字和贴纸的表情包生成器","Create memes from your photos with top/bottom text, stickers, filters, and 10+ classic meme templates. Choose from Impact, Comic Sans, or Bold fonts, 7 text colors, 12 stickers, and 6 image filters. Download as PNG or copy to clipboard.":"用你的照片创建表情包，支持上下文字、贴纸、滤镜和 10+ 经典表情包模板。可从 Impact、Comic Sans 或 Bold 字体、7 种文字颜色、12 种贴纸和 6 种图片滤镜中选择。可下载为 PNG 或复制到剪贴板。","© 2026 JimmyWithFiona · Free AI Tools":"© 2026 JimmyWithFiona · 免费 AI 工具"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=="SCRIPT"&&node.tagName!=="STYLE"&&node.tagName!=="NOSCRIPT"){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang="zh-CN";
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==="childList"){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==="characterData"){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>

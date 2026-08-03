@@ -67,5 +67,35 @@
 <footer style="text-align:center;padding:1.5rem;color:#7a8190;font-size:0.75rem;border-top:1px solid #232733;">
     <p>JimmyWithFiona © 2026 · Free online tools, games & tests</p>
 </footer>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||'en').toLowerCase();
+if(!lang.startsWith('zh'))return;
+var ZH={"Contact Us":"联系我们","Have feedback, found a bug, or want to suggest a new tool? We'd love to hear from you!":"有反馈、发现 Bug，还是想建议新工具？我们很乐意听到你的声音！","The fastest way to reach us is by opening an issue on GitHub. We monitor all repositories and respond quickly.":"联系我们最快的方式是在 GitHub 上提一个 issue。我们关注所有仓库并快速响应。","Visit Our GitHub":"访问我们的 GitHub","Email":"邮箱","Prefer email? Reach us at:":"更喜欢邮件？联系我们：","FAQ":"常见问题","Are all tools free?":"所有工具都免费吗？","— Yes, every tool, game, and test on JimmyWithFiona is 100% free with no limits.":"——是的，JimmyWithFiona 上的每个工具、游戏和测试都是 100% 免费的，没有任何限制。","Do I need to create an account?":"我需要创建账号吗？","— No. All tools work without any registration or login.":"——不需要。所有工具无需任何注册或登录即可使用。","Is my data safe?":"我的数据安全吗？","— Yes. All processing happens locally in your browser. We don't collect or store your data.":"——安全。所有处理都在你的浏览器中本地进行。我们不收集或存储你的数据。","Can I suggest a new tool?":"我可以建议新工具吗？","— Absolutely! Email or open a GitHub issue with your idea.":"——当然可以！发邮件或在 GitHub 上提一个 issue 告诉我们你的想法。","← Back to Home":"← 返回首页","JimmyWithFiona © 2026 · Free online tools, games & tests":"JimmyWithFiona © 2026 · 免费在线工具、游戏和测试"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=='SCRIPT'&&node.tagName!=='STYLE'&&node.tagName!=='NOSCRIPT'){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang='zh-CN';
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==='childList'){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==='characterData'){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>

@@ -79,5 +79,35 @@ footer a{color:var(--hover);text-decoration:none}
     <p><a href="/">Home</a> · <a href="/tools/">All Tools</a> · <a href="/ai-tools/">AI Tools</a></p>
     <p>© 2026 JimmyWithFiona · Free Online Games</p>
 </footer>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||"en").toLowerCase();
+if(!lang.startsWith("zh"))return;
+var ZH={"AI Tools":"AI 工具","All Tools":"所有工具","Games":"游戏","Home":"首页","Free Online Games":"免费在线游戏","6 classic games that run in your browser. No download, no signup, play instantly.":"6 款在浏览器中运行的经典游戏。无需下载、无需注册，即开即玩。","Guess the 5-letter word in 6 tries. Daily puzzle + practice.":"在 6 次尝试内猜出 5 字母单词。每日谜题 + 练习模式。","Minesweeper":"扫雷","Classic mine-finding puzzle. 3 difficulty levels.":"经典扫雷益智游戏。3 个难度等级。","Merge tiles to reach 2048. Addictive puzzle game.":"合并方块达到 2048。令人上瘾的益智游戏。","Snake Game":"贪吃蛇游戏","Classic snake — eat, grow, survive. 3 levels.":"经典贪吃蛇——吃、长、活。3 个等级。","Brick Breaker":"打砖块","Classic arcade with power-ups and levels.":"带道具和关卡的经典街机游戏。","Win98 Simulator":"Win98 模拟器","Relive Windows 98 — Notepad, Paint, Minesweeper.":"重温 Windows 98——记事本、画图、扫雷。","Free Browser Games — No Download Needed":"免费网页游戏——无需下载","Play 6 classic games instantly in your browser. No downloads, no installations, no signups — just click and play. Our games run on HTML5 and JavaScript, so they work on any modern browser including Chrome, Firefox, Safari, and Edge. All games are fully responsive and support both keyboard/mouse and touch controls for mobile play.":"在浏览器中即刻畅玩 6 款经典游戏。无需下载、无需安装、无需注册——点击即玩。我们的游戏基于 HTML5 和 JavaScript 运行，适用于包括 Chrome、Firefox、Safari 和 Edge 在内的任何现代浏览器。所有游戏完全自适应，支持键盘/鼠标操作和移动端触控操作。","Wordle — Daily Word Puzzle":"Wordle——每日单词谜题","Wordle is the viral word-guessing game that took the world by storm. Guess a hidden 5-letter word in 6 tries. After each guess, tiles change color: green = correct letter in the right spot, yellow = letter in the word but wrong spot, gray = letter not in the word. Our version includes a daily puzzle plus unlimited practice mode, stats tracking, and emoji sharing.":"Wordle 是风靡全球的猜词游戏。在 6 次尝试内猜出一个隐藏的 5 字母单词。每次猜测后，方块会变色：绿色 = 字母正确且位置正确，黄色 = 字母在单词中但位置不对，灰色 = 字母不在单词中。我们的版本包括每日谜题、无限练习模式、数据统计和 emoji 分享。","Minesweeper — Classic Puzzle Game":"扫雷——经典益智游戏","The timeless minesweeper game that came with Windows. Left-click to reveal squares, right-click to flag mines. Use logic and deduction to clear the board without hitting a mine. Three difficulty levels: Beginner (9x9, 10 mines), Intermediate (16x16, 40 mines), and Expert (30x16, 99 mines).":"随 Windows 附带的经典扫雷游戏。左键点击揭开方格，右键点击标记地雷。运用逻辑和推理清除整个棋盘而不踩到地雷。三个难度等级：初级（9x9，10 颗地雷）、中级（16x16，40 颗地雷）和专家（30x16，99 颗地雷）。","2048 — Addictive Sliding Puzzle":"2048——令人上瘾的滑动益智游戏","Swipe to move numbered tiles. When two tiles with the same number touch, they merge into one. The goal is to create a tile showing 2048. Simple to learn, hard to master. Keep your highest tile in a corner and build chains along the edges for the best strategy.":"滑动移动带数字的方块。当两个相同数字的方块相碰时，它们会合并为一个。目标是创建一个显示 2048 的方块。简单易学，难于精通。将最大的方块保持在角落，并沿着边缘构建连击是最佳策略。","Snake Game — Retro Arcade Classic":"贪吃蛇游戏——复古街机经典","The classic snake game from old Nokia phones. Eat food to grow longer, avoid hitting walls or your own tail. Three difficulty levels affect the snake's speed. How long can you survive?":"来自老式诺基亚手机的经典贪吃蛇游戏。吃食物变长，避免撞到墙壁或自己的尾巴。三个难度等级影响蛇的速度。你能存活多久？","© 2026 JimmyWithFiona · Free Online Games":"© 2026 JimmyWithFiona · 免费在线游戏"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=="SCRIPT"&&node.tagName!=="STYLE"&&node.tagName!=="NOSCRIPT"){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang="zh-CN";
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==="childList"){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==="characterData"){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>

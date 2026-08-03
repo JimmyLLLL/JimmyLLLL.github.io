@@ -93,5 +93,35 @@
 <footer style="text-align:center;padding:1.5rem;color:#7a8190;font-size:0.75rem;border-top:1px solid #232733;">
     <p>JimmyWithFiona © 2026 · Free online tools, games & tests</p>
 </footer>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||'en').toLowerCase();
+if(!lang.startsWith('zh'))return;
+var ZH={"Privacy Policy":"隐私政策","Last updated: July 24, 2026":"最后更新：2026 年 7 月 24 日","JimmyWithFiona (\"we\", \"this site\") is a collection of browser-based tools, games, and tests. We are committed to protecting your privacy. This policy explains how we handle data.":"JimmyWithFiona（“我们”、“本网站”）是一组基于浏览器的工具、游戏和测试。我们致力于保护你的隐私。本政策说明了我们如何处理数据。","1. Information We Collect":"1. 我们收集的信息","We do not require registration and do not collect personal information such as your name, email, or phone number. All tool operations — text counting, calculations, QR generation, password creation, drawings, game scores — happen entirely in your browser. Your data is never transmitted to or stored on any server.":"我们不需要注册，也不收集你的姓名、邮箱或电话号码等个人信息。所有工具操作——文本计数、计算、二维码生成、密码创建、绘图、游戏分数——完全在你的浏览器中进行。你的数据永远不会被传输到或存储在任何服务器上。","2. Local Storage":"2. 本地存储","Some tools use your browser's local storage to save preferences, such as high scores in games or visit counters. This data remains on your device and can be cleared at any time through your browser settings. It is never sent to us.":"部分工具使用浏览器的本地存储来保存偏好设置，例如游戏中的高分或访问计数器。这些数据保留在你的设备上，可随时通过浏览器设置清除。它们永远不会发送给我们。","3. Cookies":"3. Cookie","This site itself does not set cookies. However, third-party services described below may use cookies.":"本网站本身不设置 Cookie。但是，下面所述的第三方服务可能会使用 Cookie。","4. Third-Party Services":"4. 第三方服务","This site uses the following third-party services:":"本网站使用以下第三方服务：","— Hosts this website. GitHub may log standard request data (IP address, access time) for security purposes.":"——托管本网站。GitHub 可能出于安全目的记录标准请求数据（IP 地址、访问时间）。","— Displays advertisements. Google uses cookies to serve relevant ads.":"——展示广告。Google 使用 Cookie 来投放相关广告。","— Provides anonymous page view counting. No personal data is transmitted.":"——提供匿名页面浏览计数。不传输任何个人数据。","— Used by WorldPulse for live news headlines. No personal data is sent.":"——供 WorldPulse 用于获取实时新闻头条。不发送任何个人数据。","5. Advertising":"5. 广告","This site displays ads via Google AdSense (publisher ID: ca-pub-1840337371416691). Google, as a third-party vendor, uses cookies to serve ads on this site. Google's use of advertising cookies enables it and its partners to serve ads based on your visit to this site and/or other sites on the Internet.":"本网站通过 Google AdSense 展示广告（发布商 ID：ca-pub-1840337371416691）。Google 作为第三方供应商，使用 Cookie 在本网站上投放广告。Google 对广告 Cookie 的使用使其及其合作伙伴能够根据你对本网站和/或互联网上其他网站的访问来投放广告。","You may opt out of personalized advertising by visiting":"你可以访问以下页面选择停用个性化广告：","Google Ads Settings":"Google 广告设置","You may opt out of third-party vendor cookies at":"你可以在以下网址选择停用第三方供应商的 Cookie：","For more information, see":"如需了解更多信息，请参阅","Google's advertising privacy policy":"Google 的广告隐私政策","6. Third-Party Links":"6. 第三方链接","Our site contains links to external websites (news outlets, search engines, etc.). We are not responsible for the content or privacy practices of those sites. We recommend reviewing their privacy policies.":"我们的网站包含指向外部网站（新闻媒体、搜索引擎等）的链接。我们对这些网站的内容或隐私做法不承担责任。我们建议你查阅它们的隐私政策。","7. Children's Privacy":"7. 儿童隐私","Our tools and games are suitable for all ages. We do not knowingly collect any personal information from children or any other users. If you believe a child has provided personal information, please":"我们的工具和游戏适合所有年龄段。我们不会故意收集儿童或任何其他用户的个人信息。如果你认为有儿童提供了个人信息，请","contact us":"联系我们","8. Your Rights":"8. 你的权利","Since we do not collect personal data, there is no personal data to access, modify, or delete. Your tool data is stored locally and can be cleared via your browser settings.":"由于我们不收集个人数据，因此没有可供访问、修改或删除的个人数据。你的工具数据存储在本地，可通过浏览器设置清除。","9. Data Security":"9. 数据安全","All data is processed in your browser using standard web technologies. Our site is served over HTTPS to ensure secure transmission. We do not maintain servers or databases that store user data.":"所有数据均使用标准网络技术在你的浏览器中处理。我们的网站通过 HTTPS 提供服务以确保安全传输。我们不维护存储用户数据的服务器或数据库。","10. Policy Updates":"10. 政策更新","We may update this privacy policy from time to time. Updates will be posted on this page with a revised date. We recommend reviewing it periodically.":"我们可能会不时更新本隐私政策。更新将发布在本页面上并附上修订日期。我们建议你定期查阅。","11. Contact":"11. 联系方式","For any questions about this privacy policy, please visit our":"如有关于本隐私政策的任何问题，请访问我们的","contact page":"联系页面","← Back to Home":"← 返回首页","JimmyWithFiona © 2026 · Free online tools, games & tests":"JimmyWithFiona © 2026 · 免费在线工具、游戏和测试"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=='SCRIPT'&&node.tagName!=='STYLE'&&node.tagName!=='NOSCRIPT'){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang='zh-CN';
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==='childList'){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==='characterData'){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>

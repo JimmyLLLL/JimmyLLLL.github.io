@@ -125,5 +125,35 @@ footer a{color:var(--hover);text-decoration:none}
     <p><a href="/">Home</a> · <a href="/ai-tools/">AI Tools</a> · <a href="/games/">Games</a></p>
     <p>© 2026 JimmyWithFiona · Free Online Tools</p>
 </footer>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||"en").toLowerCase();
+if(!lang.startsWith("zh"))return;
+var ZH={"AI Tools":"AI 工具","All Tools":"所有工具","Games":"游戏","Home":"首页","Free Online Tools":"免费在线工具","35+ tools that run in your browser. No signup, no download, 100% private.":"35+ 款在浏览器中运行的工具。无需注册、无需下载、100% 隐私。","🛠️ Calculators":"🛠️ 计算器","Mortgage Calculator":"房贷计算器","Monthly payments & amortization":"月供与摊销","Age Calculator":"年龄计算器","Exact age in years, months, days":"精确到年、月、日的年龄","BMI Calculator":"BMI 计算器","Healthy weight range check":"健康体重范围检查","Percentage Calculator":"百分比计算器","Percent of, change, increase":"百分比、变化、增长","Currency Converter":"汇率换算器","Real-time exchange rates":"实时汇率","Unit Converter":"单位换算器","Length, weight, temp, volume":"长度、重量、温度、体积","⚡ Productivity":"⚡ 生产力","QR Code Generator":"二维码生成器","Create QR codes, download PNG":"生成二维码，下载 PNG","Password Generator":"密码生成器","Strong random passwords":"强随机密码","Word Counter":"字数统计器","Count words, chars, reading time":"统计字数、字符数、阅读时间","Typing Test":"打字测试","Test WPM speed & accuracy":"测试 WPM 速度和准确率","Text to Speech":"文字转语音","Convert text to audio":"将文字转换为音频","Countdown Timer":"倒计时器","Count down to any date":"倒数至任意日期","Stopwatch":"秒表","Precision timer with laps":"带计圈的高精度计时器","💻 Developer Tools":"💻 开发者工具","JSON Formatter":"JSON 格式化工具","Beautify, minify, validate":"美化、压缩、校验","Timestamp Converter":"时间戳转换器","Unix epoch to date":"Unix 时间戳转日期","Linux Commands":"Linux 命令","200+ commands cheat sheet":"200+ 命令速查表","🖼️ Image Tools":"🖼️ 图片工具","Image Resizer":"图片缩放器","Resize, compress, convert":"缩放、压缩、转换","ASCII Art":"ASCII 艺术","Image to text art converter":"图片转文字艺术转换器","Color Tool":"颜色工具","HEX/RGB/HSL, gradients":"HEX/RGB/HSL，渐变","🎲 Fun Tools":"🎲 趣味工具","Random Number":"随机数","Pick random numbers":"随机选取数字","Wheel Spinner":"转盘","Random decision maker":"随机决策器","35+ Free Online Tools — No Signup, No Download":"35+ 免费在线工具——无需注册、无需下载","Welcome to our collection of 35+ free online tools. Every tool runs entirely in your browser using JavaScript — no downloads, no signups, no data collection. Whether you need a calculator, converter, generator, or developer utility, you'll find it here. All tools are optimized for speed and work on desktop, tablet, and mobile devices.":"欢迎使用我们的 35+ 免费在线工具合集。每个工具都使用 JavaScript 完全在你的浏览器中运行——无需下载、无需注册、不收集数据。无论你需要计算器、换算器、生成器还是开发者工具，都能在这里找到。所有工具都经过速度优化，适用于桌面设备、平板和移动设备。","Calculators for Everyday Needs":"满足日常需求的计算器","Our calculator collection includes mortgage calculator for home buyers, BMI calculator for health tracking, age calculator for exact age in years/months/days, percentage calculator for quick math, currency converter with real-time exchange rates for 150+ currencies, and unit converter for length, weight, temperature, area, volume, and speed.":"我们的计算器合集包括面向购房者的房贷计算器、用于健康追踪的 BMI 计算器、精确到年/月/日的年龄计算器、用于快速计算的百分比计算器、支持 150+ 货币实时汇率的汇率换算器，以及涵盖长度、重量、温度、面积、体积和速度的单位换算器。","Productivity Tools":"生产力工具","Boost your productivity with QR code generator, password generator for secure passwords, word counter for writers, typing test to measure WPM, text to speech for audio conversion, countdown timer for events, and stopwatch with millisecond precision and lap timing.":"通过二维码生成器、生成安全密码的密码生成器、面向写作者的字数统计器、测量 WPM 的打字测试、用于音频转换的文字转语音、用于活动的倒计时器，以及带毫秒精度和计圈功能的秒表来提升你的生产力。","Developer Tools":"开发者工具","Built by developers, for developers: JSON formatter and validator with syntax highlighting and tree view, Unix timestamp converter for epoch time conversion, and a Linux commands cheat sheet with 200+ commands searchable by category.":"由开发者构建，为开发者服务：带语法高亮和树形视图的 JSON 格式化与校验工具、用于纪元时间转换的 Unix 时间戳转换器，以及包含 200+ 命令、可按类别搜索的 Linux 命令速查表。","100% Private — Your Data Stays in Your Browser":"100% 隐私——你的数据保留在浏览器中","Unlike many online tools that send your data to a server, all our tools process data locally in your browser. Your calculations, text, passwords, and images never leave your device. This makes our tools safe for sensitive data and fast to use — no waiting for server round-trips.":"与许多将数据发送到服务器的在线工具不同，我们所有的工具都在你的浏览器中本地处理数据。你的计算结果、文本、密码和图片永远不会离开你的设备。这使得我们的工具对敏感数据是安全的，而且使用起来很快速——无需等待服务器往返。","© 2026 JimmyWithFiona · Free Online Tools":"© 2026 JimmyWithFiona · 免费在线工具"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=="SCRIPT"&&node.tagName!=="STYLE"&&node.tagName!=="NOSCRIPT"){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang="zh-CN";
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==="childList"){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==="characterData"){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>
