@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
 
+# Allow AI crawlers for broader indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://jimmywithfiona.com/sitemap.xml
