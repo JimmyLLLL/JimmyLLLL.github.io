@@ -891,10 +891,10 @@ document.body.appendChild(d);
 setTimeout(function(){{d.style.opacity='1';d.style.transform='translateY(0)';}},100);
 document.getElementById('bm-close').onclick=function(){{d.style.opacity='0';d.style.transform='translateY(10px)';setTimeout(function(){{d.remove()}},300)}};
 }
-var互动=0;
+var interactions=0;
 function checkEngagement(){
-互动++;
-if(互动>=3&&!localStorage.getItem('bm_dismissed')){
+interactions++;
+if(interactions>=3&&!localStorage.getItem('bm_dismissed')){
 showBookmarkHint();
 localStorage.setItem('bm_dismissed','1');
 }
