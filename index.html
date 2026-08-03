@@ -12,7 +12,8 @@
     <meta name="keywords" content="online tools, free tools, web games, wordle, minesweeper, linux commands, image resizer, pixel art, horoscope, word counter, typing test, age calculator, percentage calculator, BMI calculator, 2048, AI face swap, AI avatar generator, mortgage calculator, QR code generator, password generator, unit converter, color tool, countdown timer, stopwatch">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jimmywithfiona.com/">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1840337371416691" crossorigin="anonymous"></script>
     <meta name="google-site-verification" content="ePxMXHXzaRnnqr_OmaA9sww5PXXnX85txqf-sPPfrJE" />
@@ -317,6 +318,15 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ItemList","name":"JimmyWithFiona Tools","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Face Swap","item":"https://jimmywithfiona.com/face-swap/"},{"@type":"ListItem","position":2,"name":"AI Avatar Generator","item":"https://jimmywithfiona.com/ai-avatar-generator/"},{"@type":"ListItem","position":3,"name":"Background Remover","item":"https://jimmywithfiona.com/background-remover/"},{"@type":"ListItem","position":4,"name":"Meme Generator","item":"https://jimmywithfiona.com/meme-generator/"},{"@type":"ListItem","position":5,"name":"Wordle","item":"https://jimmywithfiona.com/wordle/"},{"@type":"ListItem","position":6,"name":"Mortgage Calculator","item":"https://jimmywithfiona.com/mortgage-calculator/"},{"@type":"ListItem","position":7,"name":"QR Code Generator","item":"https://jimmywithfiona.com/qr-code-generator/"},{"@type":"ListItem","position":8,"name":"Password Generator","item":"https://jimmywithfiona.com/password-generator/"},{"@type":"ListItem","position":9,"name":"JSON Formatter","item":"https://jimmywithfiona.com/json-formatter/"},{"@type":"ListItem","position":10,"name":"Typing Test","item":"https://jimmywithfiona.com/typing-test/"},{"@type":"ListItem","position":11,"name":"Linux Commands","item":"https://jimmywithfiona.com/linux-commands/"},{"@type":"ListItem","position":12,"name":"BMI Calculator","item":"https://jimmywithfiona.com/bmi-calculator/"},{"@type":"ListItem","position":13,"name":"Age Calculator","item":"https://jimmywithfiona.com/age-calculator/"},{"@type":"ListItem","position":14,"name":"Currency Converter","item":"https://jimmywithfiona.com/currency-converter/"},{"@type":"ListItem","position":15,"name":"Image Resizer","item":"https://jimmywithfiona.com/image-resizer/"},{"@type":"ListItem","position":16,"name":"Pixel Art","item":"https://jimmywithfiona.com/pixel-art/"},{"@type":"ListItem","position":17,"name":"Daily Horoscope","item":"https://jimmywithfiona.com/daily-horoscope/"},{"@type":"ListItem","position":18,"name":"MBTI Test","item":"https://jimmywithfiona.com/mbti-test/"},{"@type":"ListItem","position":19,"name":"2048 Game","item":"https://jimmywithfiona.com/game-2048/"},{"@type":"ListItem","position":20,"name":"Minesweeper","item":"https://jimmywithfiona.com/minesweeper/"}]}
 </script>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-XXXXXXXXXX');
+</script>
+<!-- /GA4 -->
 </head>
 <body>
 <canvas class="bg-canvas" id="bgCanvas"></canvas>
@@ -867,5 +877,31 @@ if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && !nav
     bgCanvas.style.background = 'radial-gradient(circle at 50% 30%, rgba(79,140,255,.03) 0%, transparent 50%)';
 }
 </script>
+<!-- BOOKMARK-PROMPT -->
+<script>
+(function(){
+var shown=false;
+function showBookmarkHint(){
+if(shown)return;shown=true;
+var d=document.createElement('div');
+d.id='bm-hint';
+d.style.cssText='position:fixed;bottom:80px;right:20px;background:#161922;border:1px solid #2d3340;border-radius:12px;padding:1rem 1.2rem;max-width:260px;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.4);font-size:.82rem;color:#e8eaf0;font-family:sans-serif;transition:opacity .3s,transform .3s;opacity:0;transform:translateY(10px)';
+d.innerHTML='<div style="font-weight:700;margin-bottom:.3rem;">⭐ Bookmark this tool</div><div style="color:#7a8190;font-size:.75rem;margin-bottom:.6rem;">Quick access for next time — press Ctrl+D</div><button id="bm-close" style="background:#4f8cff;color:#fff;border:none;border-radius:6px;padding:.3rem .8rem;font-size:.72rem;cursor:pointer">Got it</button>';
+document.body.appendChild(d);
+setTimeout(function(){{d.style.opacity='1';d.style.transform='translateY(0)';}},100);
+document.getElementById('bm-close').onclick=function(){{d.style.opacity='0';d.style.transform='translateY(10px)';setTimeout(function(){{d.remove()}},300)}};
+}
+var互动=0;
+function checkEngagement(){
+互动++;
+if(互动>=3&&!localStorage.getItem('bm_dismissed')){
+showBookmarkHint();
+localStorage.setItem('bm_dismissed','1');
+}
+}
+['click','keydown','touchstart'].forEach(function(e){document.addEventListener(e,checkEngagement,{once:false,passive:true})});
+})();
+</script>
+<!-- /BOOKMARK-PROMPT -->
 </body>
 </html>
