@@ -336,19 +336,19 @@ gtag('config','G-XXXXXXXXXX');
     <h1 data-text="JimmyWithFiona">JimmyWithFiona</h1>
     <p><span class="typewriter" id="typewriter"></span></p>
     <div class="hero-badges">
-        <span class="hero-badge">⚡ <strong>Instant</strong> — no signup</span>
-        <span class="hero-badge">🔒 <strong>Private</strong> — runs in browser</span>
-        <span class="hero-badge">📱 <strong>Mobile</strong> — works everywhere</span>
-        <span class="hero-badge">💸 <strong>100% Free</strong></span>
+        <span class="hero-badge" data-i18n="badge_instant">⚡ <strong>Instant</strong> — no signup</span>
+        <span class="hero-badge" data-i18n="badge_private">🔒 <strong>Private</strong> — runs in browser</span>
+        <span class="hero-badge" data-i18n="badge_mobile">📱 <strong>Mobile</strong> — works everywhere</span>
+        <span class="hero-badge" data-i18n="badge_free">💸 <strong>100% Free</strong></span>
     </div>
     <div class="hub-links" style="display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
-        <a href="/ai-tools/" style="background:linear-gradient(135deg,#ff6b35,#fdcb6e);color:#fff;padding:.5rem 1.2rem;border-radius:999px;font-size:.82rem;font-weight:600;text-decoration:none;transition:transform .15s;">🤖 AI Tools</a>
-        <a href="/tools/" style="background:linear-gradient(135deg,#4f8cff,#6ba1ff);color:#fff;padding:.5rem 1.2rem;border-radius:999px;font-size:.82rem;font-weight:600;text-decoration:none;transition:transform .15s;">🛠️ All Tools</a>
-        <a href="/games/" style="background:linear-gradient(135deg,#2ecc71,#55efc4);color:#fff;padding:.5rem 1.2rem;border-radius:999px;font-size:.82rem;font-weight:600;text-decoration:none;transition:transform .15s;">🎮 Games</a>
+        <a href="/ai-tools/" data-i18n="hub_ai" style="background:linear-gradient(135deg,#ff6b35,#fdcb6e);color:#fff;padding:.5rem 1.2rem;border-radius:999px;font-size:.82rem;font-weight:600;text-decoration:none;transition:transform .15s;">🤖 AI Tools</a>
+        <a href="/tools/" data-i18n="hub_tools" style="background:linear-gradient(135deg,#4f8cff,#6ba1ff);color:#fff;padding:.5rem 1.2rem;border-radius:999px;font-size:.82rem;font-weight:600;text-decoration:none;transition:transform .15s;">🛠️ All Tools</a>
+        <a href="/games/" data-i18n="hub_games" style="background:linear-gradient(135deg,#2ecc71,#55efc4);color:#fff;padding:.5rem 1.2rem;border-radius:999px;font-size:.82rem;font-weight:600;text-decoration:none;transition:transform .15s;">🎮 Games</a>
     </div>
     <div class="search-wrap">
         <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" id="searchInput" placeholder="Search 35+ tools and games..." autocomplete="off">
+        <input type="text" class="search-input" id="searchInput" data-i18n-ph="search_placeholder" placeholder="Search 35+ tools and games..." autocomplete="off">
     </div>
 </header>
 <main class="container">
@@ -357,34 +357,34 @@ gtag('config','G-XXXXXXXXXX');
     <div class="section" id="sec-ai">
         <div class="section-header">
             <span class="section-icon">🤖</span>
-            <span class="section-title">AI Tools</span>
+            <span class="section-title" data-i18n="sec_ai">AI Tools</span>
             <span class="section-count">5</span>
         </div>
         <div class="grid" id="grid-ai">
             <a class="card" href="/face-swap/" data-search="face swap ai photo deepfake">            <span class="spotlight"></span>
             <span class="card-tag hot">Hot</span>
-                <div class="card-top"><span class="card-icon">🎭</span><span class="card-name">AI Face Swap</span></div>
-                <div class="card-desc">Swap faces in photos using AI. Private, no upload.</div>
+                <div class="card-top"><span class="card-icon">🎭</span><span class="card-name" data-i18n="card_name_faceswap">AI Face Swap</span></div>
+                <div class="card-desc" data-i18n="card_desc_faceswap">Swap faces in photos using AI. Private, no upload.</div>
             </a>
             <a class="card" href="/ai-avatar-generator/" data-search="ai avatar generator cartoon anime profile picture maker">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name">AI Avatar Generator</span></div>
-                <div class="card-desc">Transform photos into cartoon, anime, oil painting & more.</div>
+                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name" data-i18n="card_name_avatar">AI Avatar Generator</span></div>
+                <div class="card-desc" data-i18n="card_desc_avatar">Transform photos into cartoon, anime, oil painting & more.</div>
             </a>
             <a class="card" href="/background-remover/" data-search="background remover remove background image transparent png ai">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">✂️</span><span class="card-name">Background Remover</span></div>
-                <div class="card-desc">Remove image backgrounds with AI. Free, no upload, transparent PNG.</div>
+                <div class="card-top"><span class="card-icon">✂️</span><span class="card-name" data-i18n="card_name_bgremover">Background Remover</span></div>
+                <div class="card-desc" data-i18n="card_desc_bgremover">Remove image backgrounds with AI. Free, no upload, transparent PNG.</div>
             </a>
             <a class="card" href="/pixel-art/" data-search="pixel art image converter 8-bit retro photo">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name">Pixel Art</span></div>
-                <div class="card-desc">Convert photos to 8-bit pixel art. 6 retro palettes.</div>
+                <div class="card-top"><span class="card-icon">🎨</span><span class="card-name" data-i18n="card_name_pixel">Pixel Art</span></div>
+                <div class="card-desc" data-i18n="card_desc_pixel">Convert photos to 8-bit pixel art. 6 retro palettes.</div>
             </a>
             <a class="card" href="/meme-generator/" data-search="meme generator meme maker photo meme caption text sticker">            <span class="spotlight"></span>
             <span class="card-tag hot">Hot</span>
-                <div class="card-top"><span class="card-icon">😂</span><span class="card-name">AI Meme Generator</span></div>
-                <div class="card-desc">Turn photos into memes. Text, stickers, filters, 10+ templates. No upload.</div>
+                <div class="card-top"><span class="card-icon">😂</span><span class="card-name" data-i18n="card_name_meme">AI Meme Generator</span></div>
+                <div class="card-desc" data-i18n="card_desc_meme">Turn photos into memes. Text, stickers, filters, 10+ templates. No upload.</div>
             </a>
         </div>
     </div>
@@ -393,23 +393,23 @@ gtag('config','G-XXXXXXXXXX');
     <div class="section" id="sec-image">
         <div class="section-header">
             <span class="section-icon">🖼️</span>
-            <span class="section-title">Image Tools</span>
+            <span class="section-title" data-i18n="sec_image">Image Tools</span>
             <span class="section-count">3</span>
         </div>
         <div class="grid" id="grid-image">
             <a class="card" href="/image-resizer/" data-search="image resizer resize photo compress convert">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">📐</span><span class="card-name">Image Resizer</span></div>
-                <div class="card-desc">Resize images, compress, convert to PNG/JPG/WebP. No upload.</div>
+                <div class="card-top"><span class="card-icon">📐</span><span class="card-name" data-i18n="card_name_resizer">Image Resizer</span></div>
+                <div class="card-desc" data-i18n="card_desc_resizer">Resize images, compress, convert to PNG/JPG/WebP. No upload.</div>
             </a>
             <a class="card" href="/ascii-art/" data-search="ascii art generator image to text art converter">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">💻</span><span class="card-name">ASCII Art</span></div>
-                <div class="card-desc">Convert images to ASCII text art. 6 styles, color mode, download.</div>
+                <div class="card-top"><span class="card-icon">💻</span><span class="card-name" data-i18n="card_name_ascii">ASCII Art</span></div>
+                <div class="card-desc" data-i18n="card_desc_ascii">Convert images to ASCII text art. 6 styles, color mode, download.</div>
             </a>
             <a class="card" href="/color-tool/" data-search="color tool hex rgb hsl picker gradient">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">🎨</span><span class="card-name">Color Tool</span></div>
-                <div class="card-desc">Pick colors, convert HEX/RGB/HSL, generate CSS gradients.</div>
+            <div class="card-top"><span class="card-icon">🎨</span><span class="card-name" data-i18n="card_name_color">Color Tool</span></div>
+                <div class="card-desc" data-i18n="card_desc_color">Pick colors, convert HEX/RGB/HSL, generate CSS gradients.</div>
             </a>
         </div>
     </div>
@@ -418,23 +418,23 @@ gtag('config','G-XXXXXXXXXX');
     <div class="section" id="sec-dev">
         <div class="section-header">
             <span class="section-icon">💻</span>
-            <span class="section-title">Developer Tools</span>
+            <span class="section-title" data-i18n="sec_dev">Developer Tools</span>
             <span class="section-count">3</span>
         </div>
         <div class="grid" id="grid-dev">
             <a class="card" href="/json-formatter/" data-search="json formatter validator beautifier minifier parser">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">{}</span><span class="card-name">JSON Formatter</span></div>
-                <div class="card-desc">Beautify, minify, validate JSON. Tree view, syntax highlight.</div>
+                <div class="card-top"><span class="card-icon">{}</span><span class="card-name" data-i18n="card_name_json">JSON Formatter</span></div>
+                <div class="card-desc" data-i18n="card_desc_json">Beautify, minify, validate JSON. Tree view, syntax highlight.</div>
             </a>
             <a class="card" href="/timestamp-converter/" data-search="timestamp converter unix epoch time date">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">⏱️</span><span class="card-name">Timestamp Converter</span></div>
-                <div class="card-desc">Convert Unix timestamp to date and vice versa. Live epoch time.</div>
+                <div class="card-top"><span class="card-icon">⏱️</span><span class="card-name" data-i18n="card_name_ts">Timestamp Converter</span></div>
+                <div class="card-desc" data-i18n="card_desc_ts">Convert Unix timestamp to date and vice versa. Live epoch time.</div>
             </a>
             <a class="card" href="/linux-commands/" data-search="linux commands cheat sheet terminal bash">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">🐧</span><span class="card-name">Linux Commands</span></div>
-                <div class="card-desc">200+ commands with examples. Search and filter by category.</div>
+            <div class="card-top"><span class="card-icon">🐧</span><span class="card-name" data-i18n="card_name_linux">Linux Commands</span></div>
+                <div class="card-desc" data-i18n="card_desc_linux">200+ commands with examples. Search and filter by category.</div>
             </a>
         </div>
     </div>
@@ -443,34 +443,34 @@ gtag('config','G-XXXXXXXXXX');
     <div class="section" id="sec-calc">
         <div class="section-header">
             <span class="section-icon">🛠️</span>
-            <span class="section-title">Calculators</span>
+            <span class="section-title" data-i18n="sec_calc">Calculators</span>
             <span class="section-count">6</span>
         </div>
         <div class="grid" id="grid-calc">
             <a class="card" href="/mortgage-calculator/" data-search="mortgage calculator loan payment amortization">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">🏠</span><span class="card-name">Mortgage Calculator</span></div>
-                <div class="card-desc">Monthly payments, total interest, amortization schedule.</div>
+            <div class="card-top"><span class="card-icon">🏠</span><span class="card-name" data-i18n="card_name_mortgage">Mortgage Calculator</span></div>
+                <div class="card-desc" data-i18n="card_desc_mortgage">Monthly payments, total interest, amortization schedule.</div>
             </a>
             <a class="card" href="/age-calculator/" data-search="age calculator birthday years days">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">🎂</span><span class="card-name">Age Calculator</span></div>
-                <div class="card-desc">Find your exact age in years, months, days, hours, minutes, seconds.</div>
+            <div class="card-top"><span class="card-icon">🎂</span><span class="card-name" data-i18n="card_name_age">Age Calculator</span></div>
+                <div class="card-desc" data-i18n="card_desc_age">Find your exact age in years, months, days, hours, minutes, seconds.</div>
             </a>
             <a class="card" href="/bmi-calculator/" data-search="bmi calculator body mass index weight">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">📊</span><span class="card-name">BMI Calculator</span></div>
-                <div class="card-desc">Check your healthy weight range. Metric and imperial support.</div>
+            <div class="card-top"><span class="card-icon">📊</span><span class="card-name" data-i18n="card_name_bmi">BMI Calculator</span></div>
+                <div class="card-desc" data-i18n="card_desc_bmi">Check your healthy weight range. Metric and imperial support.</div>
             </a>
             <a class="card" href="/percentage-calculator/" data-search="percentage calculator percent change increase">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">%</span><span class="card-name">Percentage Calculator</span></div>
-                <div class="card-desc">Percent of, change, increase, decrease with step-by-step solutions.</div>
+            <div class="card-top"><span class="card-icon">%</span><span class="card-name" data-i18n="card_name_pct">Percentage Calculator</span></div>
+                <div class="card-desc" data-i18n="card_desc_pct">Percent of, change, increase, decrease with step-by-step solutions.</div>
             </a>
             <a class="card" href="/currency-converter/" data-search="currency converter exchange rate forex money">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">💱</span><span class="card-name">Currency Converter</span></div>
-                <div class="card-desc">Real-time exchange rates for 150+ currencies. Instant, free.</div>
+                <div class="card-top"><span class="card-icon">💱</span><span class="card-name" data-i18n="card_name_currency">Currency Converter</span></div>
+                <div class="card-desc" data-i18n="card_desc_currency">Real-time exchange rates for 150+ currencies. Instant, free.</div>
             </a>
             <a class="card" href="/unit-converter/" data-search="unit converter length weight temperature area volume speed">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">📐</span><span class="card-name">Unit Converter</span></div>
-                <div class="card-desc">Convert length, weight, temp, area, volume, speed.</div>
+            <div class="card-top"><span class="card-icon">📐</span><span class="card-name" data-i18n="card_name_unit">Unit Converter</span></div>
+                <div class="card-desc" data-i18n="card_desc_unit">Convert length, weight, temp, area, volume, speed.</div>
             </a>
         </div>
     </div>
@@ -479,38 +479,38 @@ gtag('config','G-XXXXXXXXXX');
     <div class="section" id="sec-prod">
         <div class="section-header">
             <span class="section-icon">⚡</span>
-            <span class="section-title">Productivity</span>
+            <span class="section-title" data-i18n="sec_prod">Productivity</span>
             <span class="section-count">7</span>
         </div>
         <div class="grid" id="grid-prod">
             <a class="card" href="/qr-code-generator/" data-search="qr code generator create qr png">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">📱</span><span class="card-name">QR Code Generator</span></div>
-                <div class="card-desc">Create custom QR codes for URLs, text, email. Download PNG.</div>
+            <div class="card-top"><span class="card-icon">📱</span><span class="card-name" data-i18n="card_name_qr">QR Code Generator</span></div>
+                <div class="card-desc" data-i18n="card_desc_qr">Create custom QR codes for URLs, text, email. Download PNG.</div>
             </a>
             <a class="card" href="/password-generator/" data-search="password generator strong random secure">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">🔑</span><span class="card-name">Password Generator</span></div>
-                <div class="card-desc">Generate strong, random passwords. Customizable options.</div>
+            <div class="card-top"><span class="card-icon">🔑</span><span class="card-name" data-i18n="card_name_pwd">Password Generator</span></div>
+                <div class="card-desc" data-i18n="card_desc_pwd">Generate strong, random passwords. Customizable options.</div>
             </a>
             <a class="card" href="/text-to-speech/" data-search="text to speech tts voice generator speech synthesis">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">🔊</span><span class="card-name">Text to Speech</span></div>
-                <div class="card-desc">Convert text to speech. Multiple languages, voices, speed & pitch.</div>
+                <div class="card-top"><span class="card-icon">🔊</span><span class="card-name" data-i18n="card_name_tts">Text to Speech</span></div>
+                <div class="card-desc" data-i18n="card_desc_tts">Convert text to speech. Multiple languages, voices, speed & pitch.</div>
             </a>
             <a class="card" href="/word-counter/" data-search="word counter character count text">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">📝</span><span class="card-name">Word Counter</span></div>
-                <div class="card-desc">Count words, characters, sentences, reading time, keyword density.</div>
+            <div class="card-top"><span class="card-icon">📝</span><span class="card-name" data-i18n="card_name_word">Word Counter</span></div>
+                <div class="card-desc" data-i18n="card_desc_word">Count words, characters, sentences, reading time, keyword density.</div>
             </a>
             <a class="card" href="/typing-test/" data-search="typing test wpm speed keyboard">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">⌨️</span><span class="card-name">Typing Test</span></div>
-                <div class="card-desc">Test your typing speed and accuracy. WPM, modes, quotes.</div>
+            <div class="card-top"><span class="card-icon">⌨️</span><span class="card-name" data-i18n="card_name_typing">Typing Test</span></div>
+                <div class="card-desc" data-i18n="card_desc_typing">Test your typing speed and accuracy. WPM, modes, quotes.</div>
             </a>
             <a class="card" href="/countdown-timer/" data-search="countdown timer new year christmas date days until">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">⏳</span><span class="card-name">Countdown Timer</span></div>
-                <div class="card-desc">Count down to any date — New Year, Christmas, custom events.</div>
+            <div class="card-top"><span class="card-icon">⏳</span><span class="card-name" data-i18n="card_name_countdown">Countdown Timer</span></div>
+                <div class="card-desc" data-i18n="card_desc_countdown">Count down to any date — New Year, Christmas, custom events.</div>
             </a>
             <a class="card" href="/stopwatch/" data-search="stopwatch timer lap precision milliseconds">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">⏱️</span><span class="card-name">Stopwatch</span></div>
-                <div class="card-desc">Precise stopwatch with lap timing. Millisecond accuracy.</div>
+            <div class="card-top"><span class="card-icon">⏱️</span><span class="card-name" data-i18n="card_name_stopwatch">Stopwatch</span></div>
+                <div class="card-desc" data-i18n="card_desc_stopwatch">Precise stopwatch with lap timing. Millisecond accuracy.</div>
             </a>
         </div>
     </div>
@@ -519,17 +519,17 @@ gtag('config','G-XXXXXXXXXX');
     <div class="section" id="sec-funtools">
         <div class="section-header">
             <span class="section-icon">🎲</span>
-            <span class="section-title">Fun Tools</span>
+            <span class="section-title" data-i18n="sec_fun">Fun Tools</span>
             <span class="section-count">2</span>
         </div>
         <div class="grid" id="grid-funtools">
             <a class="card" href="/random-number-generator/" data-search="random number generator pick number raffle lottery">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">🎲</span><span class="card-name">Random Number</span></div>
-                <div class="card-desc">Pick a random number within any range. Multiple numbers, no repeats.</div>
+            <div class="card-top"><span class="card-icon">🎲</span><span class="card-name" data-i18n="card_name_random">Random Number</span></div>
+                <div class="card-desc" data-i18n="card_desc_random">Pick a random number within any range. Multiple numbers, no repeats.</div>
             </a>
             <a class="card" href="/wheel-spinner/" data-search="wheel spinner random decision maker spin">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">🎡</span><span class="card-name">Wheel Spinner</span></div>
-                <div class="card-desc">Random decision maker. Spin the wheel for choices.</div>
+            <div class="card-top"><span class="card-icon">🎡</span><span class="card-name" data-i18n="card_name_wheel">Wheel Spinner</span></div>
+                <div class="card-desc" data-i18n="card_desc_wheel">Random decision maker. Spin the wheel for choices.</div>
             </a>
         </div>
     </div>
@@ -538,35 +538,35 @@ gtag('config','G-XXXXXXXXXX');
     <div class="section" id="sec-games">
         <div class="section-header">
             <span class="section-icon">🎮</span>
-            <span class="section-title">Games</span>
+            <span class="section-title" data-i18n="sec_games">Games</span>
             <span class="section-count" id="count-games">6</span>
         </div>
         <div class="grid" id="grid-games">
             <a class="card" href="/wordle/" data-search="wordle word game puzzle guess">            <span class="spotlight"></span>
             <span class="card-tag hot">Daily</span>
-                <div class="card-top"><span class="card-icon">🟩</span><span class="card-name">Wordle</span></div>
-                <div class="card-desc">Guess the 5-letter word in 6 tries. Emoji share, stats.</div>
+                <div class="card-top"><span class="card-icon">🟩</span><span class="card-name" data-i18n="card_name_wordle">Wordle</span></div>
+                <div class="card-desc" data-i18n="card_desc_wordle">Guess the 5-letter word in 6 tries. Emoji share, stats.</div>
             </a>
             <a class="card" href="/minesweeper/" data-search="minesweeper mine game puzzle classic">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">💣</span><span class="card-name">Minesweeper</span></div>
-                <div class="card-desc">Classic mine-finding puzzle. 3 levels, flag, flood-fill.</div>
+            <div class="card-top"><span class="card-icon">💣</span><span class="card-name" data-i18n="card_name_mine">Minesweeper</span></div>
+                <div class="card-desc" data-i18n="card_desc_mine">Classic mine-finding puzzle. 3 levels, flag, flood-fill.</div>
             </a>
             <a class="card" href="/snake-game/" data-search="snake game classic retro arcade">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">🐍</span><span class="card-name">Snake Game</span></div>
-                <div class="card-desc">Classic snake — eat, grow, survive. 3 difficulty levels.</div>
+                <div class="card-top"><span class="card-icon">🐍</span><span class="card-name" data-i18n="card_name_snake">Snake Game</span></div>
+                <div class="card-desc" data-i18n="card_desc_snake">Classic snake — eat, grow, survive. 3 difficulty levels.</div>
             </a>
             <a class="card" href="/game-2048/" data-search="2048 puzzle merge tiles game">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">🎮</span><span class="card-name">2048</span></div>
-                <div class="card-desc">Merge tiles to reach 2048. Addictive puzzle game.</div>
+            <div class="card-top"><span class="card-icon">🎮</span><span class="card-name" data-i18n="card_name_2048">2048</span></div>
+                <div class="card-desc" data-i18n="card_desc_2048">Merge tiles to reach 2048. Addictive puzzle game.</div>
             </a>
             <a class="card" href="/brick-breaker/" data-search="brick breaker arcade game breakout">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">🧱</span><span class="card-name">Brick Breaker</span></div>
-                <div class="card-desc">Classic arcade game with power-ups and levels.</div>
+            <div class="card-top"><span class="card-icon">🧱</span><span class="card-name" data-i18n="card_name_brick">Brick Breaker</span></div>
+                <div class="card-desc" data-i18n="card_desc_brick">Classic arcade game with power-ups and levels.</div>
             </a>
             <a class="card" href="/win98-simulator/" data-search="windows 98 simulator retro desktop">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">🖥️</span><span class="card-name">Win98 Simulator</span></div>
-                <div class="card-desc">Relive Windows 98 — Notepad, Paint, Minesweeper, more.</div>
+            <div class="card-top"><span class="card-icon">🖥️</span><span class="card-name" data-i18n="card_name_win98">Win98 Simulator</span></div>
+                <div class="card-desc" data-i18n="card_desc_win98">Relive Windows 98 — Notepad, Paint, Minesweeper, more.</div>
             </a>
         </div>
     </div>
@@ -575,28 +575,28 @@ gtag('config','G-XXXXXXXXXX');
     <div class="section" id="sec-fun">
         <div class="section-header">
             <span class="section-icon">🧪</span>
-            <span class="section-title">Tests &amp; Quizzes</span>
+            <span class="section-title" data-i18n="sec_tests">Tests &amp; Quizzes</span>
             <span class="section-count">4</span>
         </div>
         <div class="grid" id="grid-fun">
             <a class="card" href="/mbti-test/" data-search="mbti personality test 16 personalities myers briggs INTJ INFP">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">🧠</span><span class="card-name">MBTI Test</span></div>
-                <div class="card-desc">Discover your 16-personality type! 28 questions, instant results.</div>
+                <div class="card-top"><span class="card-icon">🧠</span><span class="card-name" data-i18n="card_name_mbti">MBTI Test</span></div>
+                <div class="card-desc" data-i18n="card_desc_mbti">Discover your 16-personality type! 28 questions, instant results.</div>
             </a>
             <a class="card" href="/couple-test/" data-search="couple compatibility test relationship quiz love test">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">💕</span><span class="card-name">Couple Test</span></div>
-                <div class="card-desc">Test your compatibility across 5 dimensions. 10 fun questions!</div>
+                <div class="card-top"><span class="card-icon">💕</span><span class="card-name" data-i18n="card_name_couple">Couple Test</span></div>
+                <div class="card-desc" data-i18n="card_desc_couple">Test your compatibility across 5 dimensions. 10 fun questions!</div>
             </a>
             <a class="card" href="/fun-tests/" data-search="fun tests personality quiz love calculator">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">✨</span><span class="card-name">FunTests</span></div>
-                <div class="card-desc">Personality quizzes, love calculator, psychological age test.</div>
+            <div class="card-top"><span class="card-icon">✨</span><span class="card-name" data-i18n="card_name_funtests">FunTests</span></div>
+                <div class="card-desc" data-i18n="card_desc_funtests">Personality quizzes, love calculator, psychological age test.</div>
             </a>
             <a class="card" href="/daily-horoscope/" data-search="horoscope zodiac astrology daily forecast">            <span class="spotlight"></span>
             <span class="card-tag hot">Daily</span>
-                <div class="card-top"><span class="card-icon">♈</span><span class="card-name">Daily Horoscope</span></div>
-                <div class="card-desc">Today's zodiac forecast for all 12 signs. Updated daily.</div>
+                <div class="card-top"><span class="card-icon">♈</span><span class="card-name" data-i18n="card_name_horo">Daily Horoscope</span></div>
+                <div class="card-desc" data-i18n="card_desc_horo">Today's zodiac forecast for all 12 signs. Updated daily.</div>
             </a>
         </div>
     </div>
@@ -605,19 +605,19 @@ gtag('config','G-XXXXXXXXXX');
     <div class="section" id="sec-creative">
         <div class="section-header">
             <span class="section-icon">🎨</span>
-            <span class="section-title">Creative</span>
+            <span class="section-title" data-i18n="sec_creative">Creative</span>
             <span class="section-count">2</span>
         </div>
         <div class="grid" id="grid-creative">
             <a class="card" href="/firework-fun/" data-search="firework fireworks click particle effects canvas fun">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">🎆</span><span class="card-name">Firework Fun</span></div>
-                <div class="card-desc">Click to launch fireworks! 6 modes: rainbow, trail, sparkles & more.</div>
+                <div class="card-top"><span class="card-icon">🎆</span><span class="card-name" data-i18n="card_name_firework">Firework Fun</span></div>
+                <div class="card-desc" data-i18n="card_desc_firework">Click to launch fireworks! 6 modes: rainbow, trail, sparkles & more.</div>
             </a>
             <a class="card" href="/piano/" data-search="online piano virtual keyboard play piano music instruments">            <span class="spotlight"></span>
             <span class="card-tag new">New</span>
-                <div class="card-top"><span class="card-icon">🎹</span><span class="card-name">Online Piano</span></div>
-                <div class="card-desc">Play piano in your browser! 8 instruments, record, demo songs.</div>
+                <div class="card-top"><span class="card-icon">🎹</span><span class="card-name" data-i18n="card_name_piano">Online Piano</span></div>
+                <div class="card-desc" data-i18n="card_desc_piano">Play piano in your browser! 8 instruments, record, demo songs.</div>
             </a>
         </div>
     </div>
@@ -626,13 +626,13 @@ gtag('config','G-XXXXXXXXXX');
     <div class="section" id="sec-news">
         <div class="section-header">
             <span class="section-icon">📰</span>
-            <span class="section-title">News</span>
+            <span class="section-title" data-i18n="sec_news">News</span>
             <span class="section-count">1</span>
         </div>
         <div class="grid">
             <a class="card" href="/worldpulse/" data-search="worldpulse news dashboard international headlines">            <span class="spotlight"></span>
-            <div class="card-top"><span class="card-icon">🌍</span><span class="card-name">WorldPulse</span></div>
-                <div class="card-desc">Live international news dashboard with world clocks.</div>
+            <div class="card-top"><span class="card-icon">🌍</span><span class="card-name" data-i18n="card_name_worldpulse">WorldPulse</span></div>
+                <div class="card-desc" data-i18n="card_desc_worldpulse">Live international news dashboard with world clocks.</div>
             </a>
         </div>
     </div>
@@ -643,20 +643,20 @@ gtag('config','G-XXXXXXXXXX');
     </div>
 
     <div class="stats">
-        <span>👁️ Views <strong id="pv">-</strong></span>
+        <span data-i18n="stat_views">👁️ Views <strong id="pv">-</strong></span>
         <span class="stat-divider">|</span>
         <span>👤 Visitors <strong id="uv">-</strong></span>
         <span class="stat-divider">|</span>
-        <span>🛠️ <strong>35+</strong> Tools</span>
+        <span data-i18n="stat_tools">🛠️ <strong>35+</strong> Tools</span>
         <span class="stat-divider">|</span>
-        <span>🔒 <strong>100%</strong> Private</span>
+        <span data-i18n="stat_private">🔒 <strong>100%</strong> Private</span>
     </div>
 
     <!-- SEO content -->
     <div class="seo-section">
-        <h2>About JimmyWithFiona</h2>
+        <h2 data-i18n="seo_about">About JimmyWithFiona</h2>
         <p>JimmyWithFiona is a collection of 35+ free online tools, games, and daily content. All apps run entirely in your browser — no downloads, no signups, no data collection. Whether you want to play Wordle, check your daily horoscope, resize an image, learn Linux commands, or calculate your age down to the second, we've got you covered.</p>
-        <h2>What's Inside?</h2>
+        <h2 data-i18n="seo_inside">What's Inside?</h2>
         <p><strong>AI Tools:</strong> AI Face Swap, AI Avatar Generator, Background Remover, and Pixel Art converter. All AI processing happens locally in your browser.</p>
         <p><strong>Image Tools:</strong> Image Resizer, ASCII Art generator, and Color Tool (HEX/RGB/HSL converter and gradient generator).</p>
         <p><strong>Developer Tools:</strong> JSON Formatter & Validator, Unix Timestamp Converter, and Linux Commands cheat sheet. Built for programmers.</p>
@@ -666,11 +666,11 @@ gtag('config','G-XXXXXXXXXX');
         <p><strong>Tests &amp; Quizzes:</strong> MBTI personality test, couple compatibility test, FunTests (love calculator, spirit animal, psychological age), and daily horoscope.</p>
         <p><strong>Creative:</strong> Firework Fun (interactive particle effects) and Online Piano (8 instruments, recording, demo songs).</p>
         <p><strong>News:</strong> WorldPulse live international news dashboard with real-time headlines from top global outlets and world clocks for major cities.</p>
-        <h2>Why Use JimmyWithFiona?</h2>
+        <h2 data-i18n="seo_why">Why Use JimmyWithFiona?</h2>
         <p>Everything is <strong>100% free</strong> with no limits. All tools work offline once loaded, respect your privacy by processing data locally, and are optimized for both desktop and mobile devices. New tools and games are added regularly. Bookmark this page for quick access to all your everyday tools and entertainment.</p>
-        <h2>Privacy &amp; Security</h2>
+        <h2 data-i18n="seo_privacy">Privacy &amp; Security</h2>
         <p>Your privacy is our priority. All tools process data locally in your browser — your text, calculations, passwords, images, and drawings never leave your device. We don't require accounts, don't track your inputs, and don't store your data. Read our full <a href="privacy.html">privacy policy</a> for details.</p>
-        <h2>FAQ</h2>
+        <h2 data-i18n="seo_faq">FAQ</h2>
         <p><strong>Are all tools really free?</strong> — Yes, every tool, game, and test is completely free with no hidden costs.</p>
         <p><strong>Do I need to download anything?</strong> — No. Everything runs in your browser. Just open a page and start using it.</p>
         <p><strong>Does it work on mobile?</strong> — Yes, all tools are responsive and support touch controls.</p>
@@ -690,7 +690,7 @@ gtag('config','G-XXXXXXXXXX');
 </script>
 </main>
 <footer>
-    <p class="footer-links"><a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a></p>
+    <p class="footer-links"><a href="about.html" data-i18n="foot_about">About</a> · <a href="privacy.html" data-i18n="foot_privacy">Privacy</a> · <a href="contact.html" data-i18n="foot_contact">Contact</a></p>
     <p>JimmyWithFiona © 2026 · 35+ free online tools, games &amp; daily content</p>
     <div class="cross-links">More: <a href="/wordle/">Wordle</a> · <a href="/minesweeper/">Minesweeper</a> · <a href="/daily-horoscope/">Horoscope</a> · <a href="/linux-commands/">Linux Commands</a> · <a href="/pixel-art/">Pixel Art</a> · <a href="/image-resizer/">Image Resizer</a></div>
 </footer>
@@ -903,5 +903,117 @@ localStorage.setItem('bm_dismissed','1');
 })();
 </script>
 <!-- /BOOKMARK-PROMPT -->
+<!-- I18N -->
+<script>
+(function(){
+var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+var isCN = lang.startsWith('zh');
+if (!isCN) return; // English is default, no changes needed
+
+var ZH = {
+    // Hero badges
+    badge_instant: '⚡ <strong>即用</strong> — 无需注册',
+    badge_private: '🔒 <strong>隐私</strong> — 浏览器端运行',
+    badge_mobile: '📱 <strong>全平台</strong> — 手机电脑都能用',
+    badge_free: '💸 <strong>完全免费</strong>',
+    // Hub links
+    hub_ai: '🤖 AI 工具',
+    hub_tools: '🛠️ 全部工具',
+    hub_games: '🎮 游戏',
+    // Search
+    search_placeholder: '搜索 35+ 工具和游戏…',
+    // Sections
+    sec_ai: 'AI 工具', sec_image: '图片工具', sec_dev: '开发者工具',
+    sec_calc: '计算器', sec_prod: '效率工具', sec_fun: '趣味工具',
+    sec_games: '游戏', sec_tests: '测试问答', sec_creative: '创意', sec_news: '新闻',
+    // Card names
+    card_name_faceswap:'AI 换脸', card_name_avatar:'AI 头像生成', card_name_bgremover:'背景去除',
+    card_name_meme:'AI 表情包', card_name_pixel:'像素画', card_name_resizer:'图片缩放',
+    card_name_ascii:'ASCII 艺术字', card_name_color:'取色工具', card_name_json:'JSON 格式化',
+    card_name_ts:'时间戳转换', card_name_linux:'Linux 命令', card_name_mortgage:'房贷计算器',
+    card_name_age:'年龄计算器', card_name_bmi:'BMI 计算器', card_name_pct:'百分比计算器',
+    card_name_currency:'汇率换算', card_name_unit:'单位换算', card_name_qr:'二维码生成器',
+    card_name_pwd:'密码生成器', card_name_tts:'文字转语音', card_name_word:'字数统计',
+    card_name_typing:'打字测试', card_name_countdown:'倒计时', card_name_stopwatch:'秒表',
+    card_name_random:'随机数', card_name_wheel:'转盘', card_name_wordle:'Wordle',
+    card_name_mine:'扫雷', card_name_snake:'贪吃蛇', card_name_2048:'2048',
+    card_name_brick:'打砖块', card_name_win98:'Win98 模拟器', card_name_mbti:'MBTI 测试',
+    card_name_couple:'情侣测试', card_name_funtests:'趣味测试', card_name_horo:'每日星座',
+    card_name_firework:'烟花', card_name_piano:'在线钢琴', card_name_worldpulse:'WorldPulse',
+    // Card descs
+    card_desc_faceswap:'AI 照片换脸。隐私安全，不上传。',
+    card_desc_avatar:'照片转卡通、动漫、油画等多种风格。',
+    card_desc_bgremover:'AI 一键去除图片背景。免费，透明 PNG。',
+    card_desc_meme:'照片做表情包。文字、贴纸、滤镜，10+ 模板。',
+    card_desc_pixel:'照片转 8 位像素风。6 种复古调色板。',
+    card_desc_resizer:'调整图片大小，压缩，转 PNG/JPG/WebP。',
+    card_desc_ascii:'图片转 ASCII 文字画。6 种风格，可下载。',
+    card_desc_color:'取色，HEX/RGB/HSL 互转，生成渐变。',
+    card_desc_json:'JSON 格式化、压缩、验证。语法高亮。',
+    card_desc_ts:'Unix 时间戳转日期，实时显示。',
+    card_desc_linux:'200+ Linux 命令速查表，按分类搜索。',
+    card_desc_mortgage:'房贷月供、总利息、还款计划。',
+    card_desc_age:'精确计算年龄：年月日时分秒。',
+    card_desc_bmi:'计算 BMI，查看健康体重范围。',
+    card_desc_pct:'百分比计算：占比、变化、增减。',
+    card_desc_currency:'150+ 货币实时汇率换算。',
+    card_desc_unit:'长度、重量、温度、面积、体积换算。',
+    card_desc_qr:'生成自定义二维码，下载 PNG。',
+    card_desc_pwd:'生成强随机密码，可自定义。',
+    card_desc_tts:'文字转语音，多语言多音色。',
+    card_desc_word:'字数统计：词数、字符、阅读时间。',
+    card_desc_typing:'打字速度测试，WPM。',
+    card_desc_countdown:'任意日期倒计时。',
+    card_desc_stopwatch:'高精度秒表，支持计圈。',
+    card_desc_random:'随机数生成，支持多个不重复。',
+    card_desc_wheel:'随机决策转盘。',
+    card_desc_wordle:'6 次猜 5 字母单词。emoji 分享。',
+    card_desc_mine:'经典扫雷。3 种难度。',
+    card_desc_snake:'经典贪吃蛇。3 种难度。',
+    card_desc_2048:'合并数字到 2048。益智游戏。',
+    card_desc_brick:'经典打砖块，道具和关卡。',
+    card_desc_win98:'重温 Windows 98。',
+    card_desc_mbti:'测测你的 MBTI 人格！28 题。',
+    card_desc_couple:'5 维度情侣契合度测试。',
+    card_desc_funtests:'性格测试、爱情计算器等。',
+    card_desc_horo:'今日 12 星座运势。每日更新。',
+    card_desc_firework:'点击放烟花！6 种模式。',
+    card_desc_piano:'浏览器弹钢琴！8 种乐器。',
+    card_desc_worldpulse:'国际新闻实时仪表盘。',
+    // SEO
+    seo_about:'关于 JimmyWithFiona', seo_inside:'里面有什么？',
+    seo_why:'为什么用 JimmyWithFiona？', seo_privacy:'隐私与安全', seo_faq:'常见问题',
+    // Footer
+    foot_about:'关于', foot_privacy:'隐私', foot_contact:'联系',
+    // Stats
+    stat_views:'👁️ 浏览 ', stat_tools:'🛠️ <strong>35+</strong> 个工具', stat_private:'🔒 <strong>100%</strong> 隐私',
+    // Typewriter lines
+};
+
+// Apply translations
+document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key = el.getAttribute('data-i18n');
+    if (ZH[key]) el.innerHTML = ZH[key];
+});
+document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+    var key = el.getAttribute('data-i18n-ph');
+    if (ZH[key]) el.setAttribute('placeholder', ZH[key]);
+});
+
+// Translate typewriter lines
+if (typeof LINES !== 'undefined') {
+    LINES = [
+        '35+ 免费在线工具、游戏和每日内容。',
+        '玩 Wordle、生成 AI 头像、缩放图片。',
+        '全在浏览器里——不用注册，不用下载。',
+        '隐私优先，数据不离开你的设备。',
+    ];
+}
+
+// Update HTML lang
+document.documentElement.lang = 'zh-CN';
+})();
+</script>
+<!-- /I18N -->
 </body>
 </html>
