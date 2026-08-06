@@ -267,7 +267,7 @@
         .back-top {
             position: fixed; bottom: 1.5rem; right: 1.5rem; width: 46px; height: 46px;
             border-radius: 50%; border: 1px solid var(--border-2);
-            background: rgba(22,25,34,.8); backdrop-filter: blur(10px); color: var(--text);
+            background: rgba(22,25,34,.95); color: var(--text);
             font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
             opacity: 0; transform: translateY(12px); pointer-events: none; transition: all .3s; z-index: 90;
         }
@@ -814,7 +814,7 @@ document.querySelectorAll(".section").forEach(s => observer.observe(s));
 
 // === Animated particle background ===
 const bgCanvas = document.getElementById("bgCanvas");
-const bgCtx = bgCanvas.getContext("2d");
+const bgCtx = bgCanvas.getContext("2d", { alpha: true });
 let bgW, bgH, particles = [];
 let mouseX = 0, mouseY = 0;
 
@@ -823,55 +823,58 @@ resizeBg();
 window.addEventListener("resize", resizeBg);
 window.addEventListener("mousemove", e => { mouseX = e.clientX; mouseY = e.clientY; });
 
-const PARTICLE_COUNT = 40;
-const PARTICLE_COLORS = ["#4f8cff","#2ecc71","#e84393","#9b59b6","#fdcb6e","#00d4aa"];
+// Pre-render glowing dot sprites (avoids expensive shadowBlur per particle)
+const BG_COLORS = ["#4f8cff","#2ecc71","#e84393","#9b59b6","#fdcb6e","#00d4aa"];
+const bgSprites = {};
+BG_COLORS.forEach(c => {
+    const sc = document.createElement('canvas');
+    sc.width = sc.height = 16;
+    const sx = sc.getContext('2d');
+    const g = sx.createRadialGradient(8, 8, 0, 8, 8, 8);
+    g.addColorStop(0, c);
+    g.addColorStop(0.4, c);
+    g.addColorStop(1, 'rgba(0,0,0,0)');
+    sx.fillStyle = g; sx.fillRect(0, 0, 16, 16);
+    bgSprites[c] = sc;
+});
+
+const PARTICLE_COUNT = 28;
 for (let i = 0; i < PARTICLE_COUNT; i++) {
     particles.push({
         x: Math.random() * bgW, y: Math.random() * bgH,
         vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
         r: Math.random() * 2 + 0.5,
-        color: PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)],
+        color: BG_COLORS[Math.floor(Math.random() * BG_COLORS.length)],
         alpha: Math.random() * 0.3 + 0.1,
     });
 }
 
+// Shared scroll-pause: pauses canvas animations while the user scrolls
+let scrollPaused = false, scrollTimer = null;
+window.addEventListener('scroll', () => {
+    scrollPaused = true;
+    if (scrollTimer) clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => { scrollPaused = false; }, 200);
+}, { passive: true });
+
 function animateBg() {
+    if (scrollPaused) { requestAnimationFrame(animateBg); return; }
     bgCtx.clearRect(0, 0, bgW, bgH);
-    particles.forEach(p => {
+    bgCtx.globalCompositeOperation = 'lighter';
+    for (const p of particles) {
         const dx = mouseX - p.x, dy = mouseY - p.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 150) { p.vx += dx * 0.0002; p.vy += dy * 0.0002; }
+        const dist2 = dx * dx + dy * dy;
+        if (dist2 < 22500) { p.vx += dx * 0.0002; p.vy += dy * 0.0002; }
         p.vx *= 0.99; p.vy *= 0.99;
         p.x += p.vx; p.y += p.vy;
         if (p.x < 0) p.x = bgW; if (p.x > bgW) p.x = 0;
         if (p.y < 0) p.y = bgH; if (p.y > bgH) p.y = 0;
-        bgCtx.beginPath();
-        bgCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        bgCtx.fillStyle = p.color;
+        const sp = bgSprites[p.color];
         bgCtx.globalAlpha = p.alpha;
-        bgCtx.shadowBlur = 8;
-        bgCtx.shadowColor = p.color;
-        bgCtx.fill();
-    });
-    bgCtx.shadowBlur = 0;
-    bgCtx.globalAlpha = 1;
-    for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const d = Math.sqrt(dx * dx + dy * dy);
-            if (d < 120) {
-                bgCtx.beginPath();
-                bgCtx.moveTo(particles[i].x, particles[i].y);
-                bgCtx.lineTo(particles[j].x, particles[j].y);
-                bgCtx.strokeStyle = particles[i].color;
-                bgCtx.globalAlpha = (1 - d / 120) * 0.08;
-                bgCtx.lineWidth = 0.5;
-                bgCtx.stroke();
-            }
-        }
+        bgCtx.drawImage(sp, p.x - 6, p.y - 6, 12, 12);
     }
     bgCtx.globalAlpha = 1;
+    bgCtx.globalCompositeOperation = 'source-over';
     requestAnimationFrame(animateBg);
 }
 
@@ -962,6 +965,11 @@ if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && !nav
     }
 
     function step() {
+        // Pause rendering while scrolling (shared flag from main script)
+        if (typeof scrollPaused !== 'undefined' && scrollPaused) {
+            requestAnimationFrame(step);
+            return;
+        }
         // fade trail (semi-transparent clear creates motion-blur trails)
         ctx.globalCompositeOperation = 'destination-out';
         ctx.fillStyle = 'rgba(0,0,0,0.2)';
