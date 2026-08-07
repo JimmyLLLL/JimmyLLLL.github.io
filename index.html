@@ -277,6 +277,82 @@
             box-shadow: 0 8px 24px rgba(79,140,255,.25); transform: translateY(-2px);
         }
 
+        /* Skip link (a11y) */
+        .skip-link {
+            position: fixed; top: -40px; left: 8px; z-index: 9999;
+            background: var(--accent); color: #fff; padding: .5rem 1rem;
+            border-radius: 0 0 8px 8px; font-size: .85rem; text-decoration: none;
+            transition: top .15s;
+        }
+        .skip-link:focus { top: 0; }
+
+        /* Sticky category navbar */
+        .cat-nav {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(10,11,15,.92);
+            border-bottom: 1px solid var(--border);
+            display: flex; gap: .2rem; padding: .35rem .8rem;
+            overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
+        }
+        .cat-nav::-webkit-scrollbar { display: none; }
+        .cat-nav a {
+            white-space: nowrap; padding: .35rem .7rem; border-radius: 8px;
+            font-size: .78rem; color: var(--text-dim); text-decoration: none;
+            transition: all .15s; display: inline-flex; align-items: center; gap: .3rem;
+        }
+        .cat-nav a:hover { color: var(--text); background: var(--card); }
+        .cat-nav a.active { color: #fff; background: var(--accent); }
+        @media (max-width: 600px) { .cat-nav { padding: .3rem .5rem; } .cat-nav a { font-size: .72rem; padding: .3rem .55rem; } }
+
+        /* Featured cards row */
+        .featured {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: .9rem; margin-bottom: 2rem;
+        }
+        .feat-card {
+            position: relative; display: flex; flex-direction: column;
+            background: linear-gradient(135deg, var(--card) 0%, var(--card-2) 100%);
+            border: 1px solid var(--border-2); border-radius: 16px;
+            padding: 1.3rem; text-decoration: none; color: var(--text); overflow: hidden;
+            transition: transform .2s, border-color .2s, box-shadow .2s;
+        }
+        .feat-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 28px rgba(79,140,255,.16); }
+        .feat-card .feat-ribbon {
+            position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: var(--g, linear-gradient(90deg, var(--accent), var(--pink)));
+        }
+        .feat-card .feat-top { display: flex; align-items: center; gap: .7rem; margin-bottom: .5rem; }
+        .feat-card .feat-icon { font-size: 2rem; }
+        .feat-card .feat-name { font-size: 1.05rem; font-weight: 800; }
+        .feat-card .feat-desc { font-size: .82rem; color: var(--text-dim); line-height: 1.45; }
+        .feat-card .feat-cta { margin-top: .7rem; font-size: .75rem; color: var(--accent-hover); font-weight: 600; }
+
+        /* Card keyboard focus + arrow */
+        .card:focus-visible {
+            outline: 2px solid var(--accent); outline-offset: 2px;
+        }
+        .card .card-arrow {
+            position: absolute; right: 1rem; bottom: 1rem;
+            color: var(--accent); font-size: 1rem; opacity: 0;
+            transform: translateX(-6px); transition: all .2s;
+        }
+        .card:hover .card-arrow, .card:focus-visible .card-arrow {
+            opacity: 1; transform: translateX(0);
+        }
+
+        /* Perf: skip rendering offscreen sections */
+        .section { content-visibility: auto; contain-intrinsic-size: auto 600px; }
+        .cat-nav, .back-top, .scroll-progress { will-change: transform; }
+
+        /* Footer categories grid */
+        .footer-cats {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: .5rem 1rem; margin: .8rem 0 1rem; font-size: .72rem;
+        }
+        .footer-cats a { color: var(--text-dim); text-decoration: none; }
+        .footer-cats a:hover { color: var(--accent-hover); }
+        .footer-cats strong { display: block; color: var(--text); margin-bottom: .2rem; font-size: .78rem; }
+
         @media (max-width: 600px) {
             .hero { padding: 2.5rem 1rem 1.5rem; }
             .hero h1 { font-size: 2rem; }
@@ -284,6 +360,8 @@
             .grid { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: .6rem; }
             .card { padding: 1rem; }
             .card-icon { font-size: 1.5rem; }
+            .search-kbd { display: none; }
+            .featured { grid-template-columns: 1fr; }
         }
     </style>
     <link rel="prefetch" href="/mortgage-calculator/">
@@ -334,6 +412,7 @@ gtag('config','G-XXXXXXXXXX');
 <!-- /GA4 -->
 </head>
 <body>
+<a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
 <canvas class="bg-canvas" id="bgCanvas"></canvas>
 <canvas id="fwCanvas"></canvas>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -354,10 +433,51 @@ gtag('config','G-XXXXXXXXXX');
     </div>
     <div class="search-wrap">
         <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" id="searchInput" data-i18n-ph="search_placeholder" placeholder="Search 35+ tools and games..." autocomplete="off">
+        <input type="text" class="search-input" id="searchInput" data-i18n-ph="search_placeholder" placeholder="Search 35+ tools and games..." autocomplete="off" aria-label="Search tools and games">
+        <kbd class="search-kbd" style="position:absolute;right:.6rem;top:50%;transform:translateY(-50%);font-size:.65rem;background:var(--card-2);border:1px solid var(--border-2);border-radius:4px;padding:.1rem .35rem;color:var(--text-dim);pointer-events:none;">/</kbd>
     </div>
 </header>
-<main class="container">
+<nav class="cat-nav" id="catNav" aria-label="Categories">
+    <a href="#sec-ai">🤖 AI</a>
+    <a href="#sec-image">🖼️ Image</a>
+    <a href="#sec-dev">💻 Dev</a>
+    <a href="#sec-calc">🛠️ Calc</a>
+    <a href="#sec-prod">⚡ Productivity</a>
+    <a href="#sec-funtools">🎲 Fun</a>
+    <a href="#sec-games">🎮 Games</a>
+    <a href="#sec-fun">🧪 Tests</a>
+    <a href="#sec-creative">🎨 Creative</a>
+    <a href="#sec-news">📰 News</a>
+</nav>
+<main class="container" id="main">
+
+    <!-- Featured picks -->
+    <div class="featured">
+        <a class="feat-card" href="/win98-simulator/" style="--g:linear-gradient(90deg,#4f8cff,#9b59b6)">
+            <div class="feat-ribbon"></div>
+            <div class="feat-top"><span class="feat-icon">🖥️</span><span class="feat-name">Win98 Simulator</span></div>
+            <div class="feat-desc">Relive Windows 98 — Notepad, Paint, Solitaire, Minesweeper, DOS Prompt & more.</div>
+            <div class="feat-cta">Open desktop →</div>
+        </a>
+        <a class="feat-card" href="/face-swap/" style="--g:linear-gradient(90deg,#e84393,#fdcb6e)">
+            <div class="feat-ribbon"></div>
+            <div class="feat-top"><span class="feat-icon">🎭</span><span class="feat-name">AI Face Swap</span></div>
+            <div class="feat-desc">Swap faces in photos with AI. 100% in-browser, no upload, private.</div>
+            <div class="feat-cta">Try now →</div>
+        </a>
+        <a class="feat-card" href="/wordle/" style="--g:linear-gradient(90deg,#2ecc71,#55efc4)">
+            <div class="feat-ribbon"></div>
+            <div class="feat-top"><span class="feat-icon">🟩</span><span class="feat-name">Wordle</span></div>
+            <div class="feat-desc">Daily 5-letter word puzzle. Guess in 6 tries, share your score.</div>
+            <div class="feat-cta">Play today →</div>
+        </a>
+        <a class="feat-card" href="/background-remover/" style="--g:linear-gradient(90deg,#00d4aa,#4f8cff)">
+            <div class="feat-ribbon"></div>
+            <div class="feat-top"><span class="feat-icon">✂️</span><span class="feat-name">Background Remover</span></div>
+            <div class="feat-desc">Remove image backgrounds with AI. Free, transparent PNG download.</div>
+            <div class="feat-cta">Remove BG →</div>
+        </a>
+    </div>
 
     <!-- 🤖 AI Tools -->
     <div class="section" id="sec-ai">
@@ -696,6 +816,13 @@ gtag('config','G-XXXXXXXXXX');
 </script>
 </main>
 <footer>
+    <div class="footer-cats">
+        <div><strong>🤖 AI</strong><a href="/face-swap/">Face Swap</a><br><a href="/ai-avatar-generator/">Avatar Gen</a><br><a href="/background-remover/">BG Remover</a></div>
+        <div><strong>🛠️ Tools</strong><a href="/qr-code-generator/">QR Code</a><br><a href="/password-generator/">Password</a><br><a href="/word-counter/">Word Counter</a></div>
+        <div><strong>🧮 Calc</strong><a href="/mortgage-calculator/">Mortgage</a><br><a href="/bmi-calculator/">BMI</a><br><a href="/currency-converter/">Currency</a></div>
+        <div><strong>🎮 Games</strong><a href="/wordle/">Wordle</a><br><a href="/game-2048/">2048</a><br><a href="/win98-simulator/">Win98</a></div>
+        <div><strong>🧪 Tests</strong><a href="/mbti-test/">MBTI</a><br><a href="/couple-test/">Couple</a><br><a href="/daily-horoscope/">Horoscope</a></div>
+    </div>
     <p class="footer-links"><a href="about.html" data-i18n="foot_about">About</a> · <a href="privacy.html" data-i18n="foot_privacy">Privacy</a> · <a href="contact.html" data-i18n="foot_contact">Contact</a></p>
     <p data-i18n="foot_copy">JimmyWithFiona © 2026 · 35+ free online tools, games &amp; daily content</p>
     <div class="cross-links" data-i18n="foot_more">More: <a href="/wordle/">Wordle</a> · <a href="/minesweeper/">Minesweeper</a> · <a href="/daily-horoscope/">Horoscope</a> · <a href="/linux-commands/">Linux Commands</a> · <a href="/pixel-art/">Pixel Art</a> · <a href="/image-resizer/">Image Resizer</a></div>
@@ -750,8 +877,11 @@ if (!localStorage.getItem(uvKey)) {
         .catch(() => { document.getElementById("uv").textContent = "N/A"; });
 }
 
-// === Card 3D tilt + spotlight ===
+// === Card 3D tilt + spotlight + arrow ===
 document.querySelectorAll(".card").forEach(card => {
+    const arrow = document.createElement('span');
+    arrow.className = 'card-arrow'; arrow.textContent = '→'; arrow.setAttribute('aria-hidden','true');
+    card.appendChild(arrow);
     card.addEventListener("mousemove", e => {
         const r = card.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width;
@@ -764,6 +894,30 @@ document.querySelectorAll(".card").forEach(card => {
     });
     card.addEventListener("mouseleave", () => { card.style.transform = ""; });
 });
+
+// === Keyboard shortcuts: '/' focus search, Esc clear ===
+document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement !== searchInput) {
+        e.preventDefault(); searchInput.focus();
+    } else if (e.key === 'Escape' && document.activeElement === searchInput) {
+        searchInput.value = ''; searchInput.dispatchEvent(new Event('input')); searchInput.blur();
+    }
+});
+
+// === Scroll-spy: highlight active category in navbar ===
+const catLinks = document.querySelectorAll('.cat-nav a');
+const sectionMap = {};
+catLinks.forEach(a => { const id = a.getAttribute('href').slice(1); sectionMap[id] = a; });
+const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            catLinks.forEach(a => a.classList.remove('active'));
+            const link = sectionMap[e.target.id];
+            if (link) { link.classList.add('active'); link.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); }
+        }
+    });
+}, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+document.querySelectorAll('.section').forEach(s => spyObserver.observe(s));
 
 // === Hero typewriter rotation ===
 const tw = document.getElementById("typewriter");
@@ -1176,6 +1330,9 @@ var ZH = {
     foot_about:'关于', foot_privacy:'隐私', foot_contact:'联系',
     foot_copy:'JimmyWithFiona © 2026 · 35+ 免费在线工具、游戏和每日内容',
     foot_more:'更多：',
+    // Skip link
+    skip:'跳到内容',
+    // Search kbd hint stays "/"
     no_results:'未找到结果。试试别的搜索词。',
     // Stats
     stat_views:'👁️ 浏览 <strong id="pv">-</strong>', stat_visitors:'👤 访客 <strong id="uv">-</strong>', stat_tools:'🛠️ <strong>35+</strong> 个工具', stat_private:'🔒 <strong>100%</strong> 隐私',
