@@ -46,12 +46,12 @@
 
         /* Animated background */
         .bg-canvas {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             z-index: 0; pointer-events: none;
         }
         /* Fireworks overlay (above content, clicks pass through) */
         #fwCanvas {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             z-index: 2; pointer-events: none;
         }
 
@@ -849,19 +849,21 @@ for (let i = 0; i < PARTICLE_COUNT; i++) {
     });
 }
 
-// Shared scroll-pause: pauses canvas animations while the user scrolls
-let scrollPaused = false, scrollTimer = null;
+// Shared scroll-aware flag: lowers work during scroll (never fully stops — keeps smooth)
+let scrolling = false, scrollTimer = null;
 window.addEventListener('scroll', () => {
-    scrollPaused = true;
+    scrolling = true;
     if (scrollTimer) clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(() => { scrollPaused = false; }, 200);
+    scrollTimer = setTimeout(() => { scrolling = false; }, 180);
 }, { passive: true });
 
 function animateBg() {
-    if (scrollPaused) { requestAnimationFrame(animateBg); return; }
     bgCtx.clearRect(0, 0, bgW, bgH);
     bgCtx.globalCompositeOperation = 'lighter';
-    for (const p of particles) {
+    // During scroll, update fewer particles to stay smooth without freezing
+    const step = scrolling ? 2 : 1;
+    for (let i = 0; i < particles.length; i += step) {
+        const p = particles[i];
         const dx = mouseX - p.x, dy = mouseY - p.y;
         const dist2 = dx * dx + dy * dy;
         if (dist2 < 22500) { p.vx += dx * 0.0002; p.vy += dy * 0.0002; }
@@ -965,14 +967,9 @@ if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && !nav
     }
 
     function step() {
-        // Pause rendering while scrolling (shared flag from main script)
-        if (typeof scrollPaused !== 'undefined' && scrollPaused) {
-            requestAnimationFrame(step);
-            return;
-        }
-        // fade trail (semi-transparent clear creates motion-blur trails)
+        // During scroll, fade harder so fewer sparks linger (lighter load, never freezes)
         ctx.globalCompositeOperation = 'destination-out';
-        ctx.fillStyle = 'rgba(0,0,0,0.2)';
+        ctx.fillStyle = (typeof scrolling !== 'undefined' && scrolling) ? 'rgba(0,0,0,0.38)' : 'rgba(0,0,0,0.2)';
         ctx.fillRect(0, 0, W, H);
         ctx.globalCompositeOperation = 'lighter';
 
