@@ -98,7 +98,7 @@
         }
         .search-input {
             width: 100%; background: var(--card); border: 1px solid var(--border-2);
-            border-radius: 12px; padding: .85rem 1.2rem .85rem 2.8rem; color: var(--text);
+            border-radius: 12px; padding: .85rem 2.4rem .85rem 2.8rem; color: var(--text);
             font-size: 1rem; font-family: inherit; transition: all .2s;
         }
         .search-input:focus {
@@ -287,11 +287,15 @@
         .skip-link:focus { top: 0; }
 
         /* Sticky category navbar */
-        .cat-nav {
+        .cat-nav-wrap {
             position: sticky; top: 0; z-index: 50;
-            background: rgba(10,11,15,.92);
+            background: rgba(10,11,15,.95);
             border-bottom: 1px solid var(--border);
-            display: flex; gap: .2rem; padding: .35rem .8rem;
+        }
+        .cat-nav {
+            display: flex; gap: .2rem;
+            max-width: 1040px; margin: 0 auto;
+            padding: .35rem 1.5rem;
             overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
         }
         .cat-nav::-webkit-scrollbar { display: none; }
@@ -299,10 +303,14 @@
             white-space: nowrap; padding: .35rem .7rem; border-radius: 8px;
             font-size: .78rem; color: var(--text-dim); text-decoration: none;
             transition: all .15s; display: inline-flex; align-items: center; gap: .3rem;
+            flex-shrink: 0;
         }
         .cat-nav a:hover { color: var(--text); background: var(--card); }
         .cat-nav a.active { color: #fff; background: var(--accent); }
-        @media (max-width: 600px) { .cat-nav { padding: .3rem .5rem; } .cat-nav a { font-size: .72rem; padding: .3rem .55rem; } }
+        @media (max-width: 600px) {
+            .cat-nav { padding: .3rem .5rem; max-width: 100%; }
+            .cat-nav a { font-size: .72rem; padding: .3rem .55rem; }
+        }
 
         /* Featured cards row */
         .featured {
@@ -340,18 +348,18 @@
             opacity: 1; transform: translateX(0);
         }
 
-        /* Perf: skip rendering offscreen sections */
-        .section { content-visibility: auto; contain-intrinsic-size: auto 600px; }
-        .cat-nav, .back-top, .scroll-progress { will-change: transform; }
+        /* No content-visibility (caused blank sections with opacity:0 + IO) */
+        .cat-nav-wrap, .back-top, .scroll-progress { will-change: transform; }
 
         /* Footer categories grid */
         .footer-cats {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            display: grid; grid-template-columns: repeat(5, 1fr);
             gap: .5rem 1rem; margin: .8rem 0 1rem; font-size: .72rem;
         }
         .footer-cats a { color: var(--text-dim); text-decoration: none; }
         .footer-cats a:hover { color: var(--accent-hover); }
         .footer-cats strong { display: block; color: var(--text); margin-bottom: .2rem; font-size: .78rem; }
+        @media (max-width: 600px) { .footer-cats { grid-template-columns: repeat(2, 1fr); } }
 
         @media (max-width: 600px) {
             .hero { padding: 2.5rem 1rem 1.5rem; }
@@ -437,7 +445,8 @@ gtag('config','G-XXXXXXXXXX');
         <kbd class="search-kbd" style="position:absolute;right:.6rem;top:50%;transform:translateY(-50%);font-size:.65rem;background:var(--card-2);border:1px solid var(--border-2);border-radius:4px;padding:.1rem .35rem;color:var(--text-dim);pointer-events:none;">/</kbd>
     </div>
 </header>
-<nav class="cat-nav" id="catNav" aria-label="Categories">
+<nav class="cat-nav-wrap" aria-label="Categories">
+<div class="cat-nav" id="catNav">
     <a href="#sec-ai">🤖 AI</a>
     <a href="#sec-image">🖼️ Image</a>
     <a href="#sec-dev">💻 Dev</a>
@@ -448,6 +457,7 @@ gtag('config','G-XXXXXXXXXX');
     <a href="#sec-fun">🧪 Tests</a>
     <a href="#sec-creative">🎨 Creative</a>
     <a href="#sec-news">📰 News</a>
+</div>
 </nav>
 <main class="container" id="main">
 
@@ -916,7 +926,7 @@ const spyObserver = new IntersectionObserver((entries) => {
             if (link) { link.classList.add('active'); link.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); }
         }
     });
-}, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+}, { rootMargin: '-44px 0px -75% 0px', threshold: 0 });
 document.querySelectorAll('.section').forEach(s => spyObserver.observe(s));
 
 // === Hero typewriter rotation ===
@@ -965,6 +975,9 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
 }, { threshold: 0.05 });
 document.querySelectorAll(".section").forEach(s => observer.observe(s));
+// Make first section visible immediately (above-the-fold)
+const firstSec = document.querySelector('.section');
+if (firstSec) firstSec.classList.add('visible');
 
 // === Animated particle background ===
 const bgCanvas = document.getElementById("bgCanvas");
